@@ -1,0 +1,29 @@
+{
+  "format_version": 1,
+  "license": "NVIDIA Open Model License",
+  "license_file": "NVIDIA_OPEN_MODEL_LICENSE.md",
+  "base_model": "nvidia/Cosmos-Predict2-2B-Video2World",
+  "artifacts": [
+    {
+      "id": "prophet-pretrained",
+      "filename": "prophet-pretrained.pt",
+      "stage": "robot-data pretraining",
+      "size_bytes": 4115563141,
+      "sha256": "9ab303ccaf92d0eb3ac60d66ef5e3551477e88b5368eba48f20323423b8012fa"
+    },
+    {
+      "id": "prophet-bridge",
+      "filename": "prophet-bridge.pt",
+      "stage": "BRIDGE adaptation",
+      "size_bytes": 4115563141,
+      "sha256": "acbc0b0806bfbc1f90724152f16b492b54aea5f62be629ea8601a8ba6582434e"
+    },
+    {
+      "id": "prophet-libero",
+      "filename": "prophet-libero.pt",
+      "stage": "LIBERO adaptation",
+      "size_bytes": 4115563141,
+      "sha256": "bfb862094cb9e8f059b5e51bea8c14daf735ddb1b7487c7ea68453fbc97a104d"
+    }
+  ]
+}

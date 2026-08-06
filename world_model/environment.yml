@@ -1,0 +1,8 @@
+name: prophrl-world-model
+channels:
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - cuda-toolkit=12.6
+  - pip

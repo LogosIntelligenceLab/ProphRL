@@ -1,0 +1,1995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ProphRL</title>
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <script
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+
+  <body>
+  <header class="site-header">
+    <!-- <div class="site-nav">
+      <a href="#top" class="nav-logo">ProphRL</a>
+
+      <nav class="nav-links">
+        <div class="nav-item has-submenu">
+          <a href="#prophet" class="nav-parent">Porphet</a>
+          <div class="nav-submenu">
+            <a href="#prophet">Prophet overview</a>
+            <a href="#wm-task-comparison">Task rollouts</a>
+            <a href="#wm-perturb">Perturbed rollouts</a>
+            <a href="#wm-edit">Action edits</a>
+            <a href="#interactive-demo-7dof">Interactive control</a>
+            <a href="#wm-flow">Flow metrics</a>
+          </div>
+        </div>
+
+        <div class="nav-item has-submenu">
+          <a href="#rl" class="nav-parent">FlowScale</a>
+          <div class="nav-submenu">
+            <a href="#rl">Pipeline</a>
+            <a href="#fs">FlowScale loss</a>
+            <a href="#reward-model">Reward model</a>
+            <a href="#rl-results">Policy gains</a>
+            <a href="#real-placebowl">Real robot</a>
+          </div>
+        </div>
+
+        <a href="#citation" class="nav-item nav-plain">Cite</a>
+      </nav>
+    </div> -->
+  </header>
+  <!-- Hero -->
+  <header class="hero-header">
+    <div class="hero-background"></div>
+
+    <div class="hero-top-links">
+      <a href="https://arxiv.org/abs/2511.20633"
+         target="_blank"
+         class="hero-top-link">
+        arXiv
+      </a>
+      <a href="https://github.com/LogosRoboticsGroup/ProphRL.git"
+         target="_blank"
+         class="hero-top-link">
+        Code
+      </a>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="hero-main-title">ProphRL</h1>
+      <p class="hero-subtitle">
+        Reinforcing Action Policies by Prophesying
+      </p>
+    </div>
+  </header>
+
+  <section class="hero-meta">
+    <div class="hero-meta-inner">
+      <h2 class="hero-paper-title">
+        Reinforcing Action Policies by Prophesying
+      </h2>
+
+    <div class="hero-authors">
+      Jiahui Zhang<sup>1 3 *</sup>, Ze Huang<sup>1 3 *</sup>,
+      Chun Gu<sup>1 2 3</sup>, Zipei Ma<sup>1 2</sup>,
+      <a href="https://lzrobots.github.io/" target="_blank">
+        Li Zhang
+      </a><sup>1 2 3</sup>
+    </div>
+
+      <div class="hero-affiliations-line">
+        <span><sup>1</sup> School of Data Science, Fudan University</span>,
+        <span><sup>2</sup> Shanghai Innovation Institute</span>,
+        <span><sup>3</sup> Logos Robotics</span>
+      </div>
+
+      <div class="hero-equal">
+        * Equal contribution
+      </div>
+    </div>
+  </section>
+
+  <div class="main-content">
+     
+      <section class="teaser-section", id="overview">
+        <!-- <h2 class="teaser-title">Online VLA RL in a World Model</h2> -->
+        <img src="assets/images/teaser.png" alt="Teaser Figure" class="teaser-image">
+        <!-- <p class="teaser-caption">
+          <em>
+            Prophet: an action-conditioned world model for robot manipulation.
+            <br>
+            FlowScale: RL to reliably improve VLA policies in imagination.          
+          </em>
+        </p> -->
+      </section>
+      <section class="summary-section" id="paper-abstract">
+        <h2 class="summary-title">📄 Abstract</h2>
+
+        <div class="summary-card">
+          <p>
+            Vision–Language–Action (VLA) policies excel in aligning language, perception, and robot control.
+            However, most VLAs are trained purely by imitation, which overfits to demonstrations and is brittle under distribution shift.
+            Reinforcement learning (RL) directly optimizes task reward and thus addresses this misalignment, but real-robot interaction is expensive and conventional simulators are hard to engineer and transfer.
+          </p>
+
+          <p>
+            We address both data efficiency and optimization stability in VLA post-training via a learned world model and an RL procedure tailored to flow-based action heads.
+            Specifically, we introduce <span class="summary-key">Prophet</span>, a unified action-to-video robot actuation model pretrained across large-scale, heterogeneous robot data to learn reusable action–outcome dynamics.
+            Prophet can be few-shot adapted to new robots, objects, and environments, yielding a rollout-ready simulator.
+          </p>
+
+          <p>
+            Upon Prophet, we reinforce action policies with <span class="summary-key">Flow-action-GRPO (FA-GRPO)</span>, which adapts Flow-GRPO to operate on VLA actions, and with <span class="summary-key">FlowScale</span>, a stepwise reweighting that rescales per-step gradients in the flow head.
+            Together, Prophet, FA-GRPO, and FlowScale constitute <strong class="summary-key">ProphRL</strong>, a practical, data- and compute-efficient path to VLA post-training.
+            Experiments show <strong class="summary-metric">5–17%</strong> success gains on public benchmarks and <strong class="summary-metric">24–30%</strong> gains on real robots across different VLA variants.
+          </p>
+        </div>
+      </section>
+
+      <section class="prophet-section", id="prophet">
+        <!-- <h2 class="prophet-title">Prophet World Model</h2> -->
+        <!-- <p class="prophet-intro">
+          <strong>Prophet</strong> is an action-conditioned video world model trained to predict how the scene
+          evolves under robot control. We pretrain it on large-scale, heterogeneous robot trajectories so that it
+          learns reusable action–outcome dynamics, and then lightly fine-tune it for new tasks and environments.
+        </p> -->
+        <!-- <div class="prophet-stats">
+            <div class="stat-item">
+              <span class="stat-label">Pretraining data</span>
+              <span class="stat-value">31M+ trajectory clips</span>
+              <span class="stat-note">from AgiBot, DROID, Open-X, LIBERO, and others</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Action space</span>
+              <span class="stat-value">7D delta pose + gripper</span>
+              <span class="stat-note">Tool frame end-effector motion with gripper open/close</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Visual input / output</span>
+              <span class="stat-value">RGB observations & rollouts</span>
+              <span class="stat-note">
+                current + history RGB with future action chunks in, future RGB frames out
+              </span>
+            </div>
+        </div> -->
+          <div class="wm-task-comparison", , id="wm-task-comparison">
+            <h3 class="wm-section-title">GT Action Rollouts Across Tasks</h3>
+            <!-- <p class="wm-section-subtitle">
+              For each task, we compare four rollouts under the same control sequence:
+            </p> -->
+            <!-- <ul class="wm-section-bullets">
+              <li>All methods start from the <strong>same real first frame</strong> and follow the <strong>same GT actions</strong>.</li>
+              <li><strong>Prophet</strong> is pretrained without using any BRIDGE trajectories; these tasks are held out.</li>
+              <li>Under the same actions, Prophet better aligns motion with control while keeping contacts and object dynamics plausible.</li>
+            </ul> -->
+            <!-- <br> -->
+
+            <div class="wm-task-card">
+              <div class="wm-task-header">
+                <span class="wm-task-name">Task 1: Pick up the yellow cube</span>
+              </div>
+              <div class="wm-task-row">
+                <div class="wm-method">
+                  <div class="wm-method-label">Real video</div>
+                  <video src="assets/videos/bridge/bridge-gt-0_web.mp4" autoplay loop muted playsinline preload="auto"></video>
+                </div>
+                <div class="wm-method">
+                  <div class="wm-method-label">Cosmos</div>
+                  <video src="assets/videos/bridge/bridge-cosmos-0_web.mp4" autoplay loop muted playsinline preload="auto"></video>
+                </div>
+                <div class="wm-method">
+                  <div class="wm-method-label">Genie-Envisioner</div>
+                  <video src="assets/videos/bridge/bridge-genie-0_web.mp4" autoplay loop muted playsinline preload="auto"></video>
+                </div>
+                <div class="wm-method">
+                  <div class="wm-method-label">Prophet (ours)</div>
+                  <video src="assets/videos/bridge/bridge-prophet-0_web.mp4" autoplay loop muted playsinline preload="auto"></video>
+                </div>
+              </div>
+            </div>
+
+            <div class="wm-task-card">
+              <div class="wm-task-header">
+                <span class="wm-task-name">Task 2: Move the carrot</span>
+              </div>
+              <div class="wm-task-row">
+                <div class="wm-method">
+                  <div class="wm-method-label">Real video</div>
+                  <video src="assets/videos/bridge/bridge-gt-1_web.mp4" autoplay loop muted playsinline preload="auto"></video>
+                </div>
+                <div class="wm-method">
+                  <div class="wm-method-label">Cosmos</div>
+                  <video src="assets/videos/bridge/bridge-cosmos-1_web.mp4" autoplay loop muted playsinline preload="auto"></video>
+                </div>
+                <div class="wm-method">
+                  <div class="wm-method-label">Genie-Envisioner</div>
+                  <video src="assets/videos/bridge/bridge-genie-1_web.mp4" autoplay loop muted playsinline preload="auto"></video>
+                </div>
+                <div class="wm-method">
+                  <div class="wm-method-label">Prophet (ours)</div>
+                  <video src="assets/videos/bridge/bridge-prophet-1_web.mp4" autoplay loop muted playsinline preload="auto"></video>
+                </div>
+              </div>
+            </div>
+
+            <div class="wm-task-card">
+              <div class="wm-task-header">
+                <span class="wm-task-name">Task 3: Pick up the spoon</span>
+              </div>
+              <div class="wm-task-row">
+                <div class="wm-method">
+                  <div class="wm-method-label">Real video</div>
+                  <video src="assets/videos/bridge/bridge-gt-2_web.mp4" autoplay loop muted playsinline preload="auto"></video>
+                </div>
+                <div class="wm-method">
+                  <div class="wm-method-label">Cosmos</div>
+                  <video src="assets/videos/bridge/bridge-cosmos-2_web.mp4" autoplay loop muted playsinline preload="auto"></video>
+                </div>
+                <div class="wm-method">
+                  <div class="wm-method-label">Genie-Envisioner</div>
+                  <video src="assets/videos/bridge/bridge-genie-2_web.mp4" autoplay loop muted playsinline preload="auto"></video>
+                </div>
+                <div class="wm-method">
+                  <div class="wm-method-label">Prophet (ours)</div>
+                  <video src="assets/videos/bridge/bridge-prophet-2_web.mp4" autoplay loop muted playsinline preload="auto"></video>
+                </div>
+              </div>
+            </div>
+
+            <!-- Task 4 -->
+            <div class="wm-task-card">
+              <div class="wm-task-header">
+                <span class="wm-task-name">Task 4: Take the lid</span>
+              </div>
+              <div class="wm-task-row">
+                <div class="wm-method">
+                  <div class="wm-method-label">Real video</div>
+                  <video src="assets/videos/bridge/bridge-gt-3_web.mp4" autoplay loop muted playsinline preload="auto"></video>
+                </div>
+                <div class="wm-method">
+                  <div class="wm-method-label">Cosmos</div>
+                  <video src="assets/videos/bridge/bridge-cosmos-3_web.mp4" autoplay loop muted playsinline preload="auto"></video>
+                </div>
+                <div class="wm-method">
+                  <div class="wm-method-label">Genie-Envisioner</div>
+                  <video src="assets/videos/bridge/bridge-genie-3_web.mp4" autoplay loop muted playsinline preload="auto"></video>
+                </div>
+                <div class="wm-method">
+                  <div class="wm-method-label">Prophet (ours)</div>
+                  <video src="assets/videos/bridge/bridge-prophet-3_web.mp4" autoplay loop muted playsinline preload="auto"></video>
+                </div>
+              </div>
+            </div>
+
+            <div class="wm-task-card">
+              <div class="wm-task-header">
+                <span class="wm-task-name">Task 5: Close the drawer</span>
+              </div>
+              <div class="wm-task-row">
+                <div class="wm-method">
+                  <div class="wm-method-label">Real video</div>
+                  <video src="assets/videos/bridge/bridge-gt-4_web.mp4" autoplay loop muted playsinline preload="auto"></video>
+                </div>
+                <div class="wm-method">
+                  <div class="wm-method-label">Cosmos</div>
+                  <video src="assets/videos/bridge/bridge-cosmos-4_web.mp4" autoplay loop muted playsinline preload="auto"></video>
+                </div>
+                <div class="wm-method">
+                  <div class="wm-method-label">Genie-Envisioner</div>
+                  <video src="assets/videos/bridge/bridge-genie-4_web.mp4" autoplay loop muted playsinline preload="auto"></video>
+                </div>
+                <div class="wm-method">
+                  <div class="wm-method-label">Prophet (ours)</div>
+                  <video src="assets/videos/bridge/bridge-prophet-4_web.mp4" autoplay loop muted playsinline preload="auto"></video>
+                </div>
+              </div>
+            </div>
+
+            <div class="wm-task-card">
+              <div class="wm-task-header">
+                <span class="wm-task-name">Task 6: Fold the cloths</span>
+              </div>
+              <div class="wm-task-row">
+                <div class="wm-method">
+                  <div class="wm-method-label">Real video</div>
+                  <video src="assets/videos/bridge/bridge-gt-5_web.mp4" autoplay loop muted playsinline preload="auto"></video>
+                </div>
+                <div class="wm-method">
+                  <div class="wm-method-label">Cosmos</div>
+                  <video src="assets/videos/bridge/bridge-cosmos-5_web.mp4" autoplay loop muted playsinline preload="auto"></video>
+                </div>
+                <div class="wm-method">
+                  <div class="wm-method-label">Genie-Envisioner</div>
+                  <video src="assets/videos/bridge/bridge-genie-5_web.mp4" autoplay loop muted playsinline preload="auto"></video>
+                </div>
+                <div class="wm-method">
+                  <div class="wm-method-label">Prophet (ours)</div>
+                  <video src="assets/videos/bridge/bridge-prophet-5_web.mp4" autoplay loop muted playsinline preload="auto"></video>
+                </div>
+              </div>
+            </div>
+
+      </section>
+
+      <!-- <section class="wm-perturb-section" id="wm-perturb">
+        <h3 class="wm-section-title">Action-Conditioned Rollouts under Perturbed Actions</h3>
+        <p class="wm-section-subtitle">
+          We feed Prophet perturbed action sequences and inspect the resulting rollouts.
+          Realistic failures indicate that the model faithfully follows the given control
+          rather than hallucinating success.
+        </p>
+
+        <div class="wm-perturb-block">
+          <div class="wm-perturb-header">
+            <span class="wm-perturb-dataset">LIBERO (simulator)</span>
+            <span class="wm-perturb-note">
+              Expert actions vs multiple perturbed variants
+            </span>
+          </div>
+
+          <div class="wm-perturb-row wm-perturb-row-4">
+            <div class="wm-perturb-col">
+              <div class="wm-perturb-label">Expert actions</div>
+              <video
+                src="assets/videos/perturb/libero_long_web.mp4"
+                autoplay loop muted playsinline preload="auto"></video>
+            </div>
+            <div class="wm-perturb-col">
+              <div class="wm-perturb-label">Perturbed actions #1</div>
+              <video
+                src="assets/videos/perturb/libero_fail_2_web.mp4"
+                autoplay loop muted playsinline preload="auto"></video>
+            </div>
+            <div class="wm-perturb-col">
+              <div class="wm-perturb-label">Perturbed actions #2</div>
+              <video
+                src="assets/videos/perturb/libero_fail_1_web.mp4"
+                autoplay loop muted playsinline preload="auto"></video>
+            </div>
+            <div class="wm-perturb-col">
+              <div class="wm-perturb-label">Perturbed actions #3</div>
+              <video
+                src="assets/videos/perturb/libero_fail_0_web.mp4"
+                autoplay loop muted playsinline preload="auto"></video>
+            </div>
+          </div>
+
+          <p class="wm-perturb-caption">
+            On LIBERO, expert actions yield successful rollouts, while perturbations cause
+            realistic failures (missing grasps, misaligned drops), showing that Prophet
+            tracks the control sequence rather than always “trying to succeed”.
+          </p>
+        </div>
+
+        <div class="wm-perturb-block">
+          <div class="wm-perturb-header">
+            <span class="wm-perturb-dataset">BRIDGE (real robot, unseen in pretrain)</span>
+            <span class="wm-perturb-note">
+              All clips use perturbed actions; failures reflect faithful action following
+            </span>
+          </div>
+
+          <div class="wm-perturb-row wm-perturb-row-2">
+            <div class="wm-perturb-col">
+              <video
+                src="assets/videos/perturb/bridge-prophet-fail-0_web.mp4"
+                autoplay loop muted playsinline preload="auto"></video>
+            </div>
+            <div class="wm-perturb-col">
+              <video
+                src="assets/videos/perturb/bridge-prophet-fail-2_web.mp4"
+                autoplay loop muted playsinline preload="auto"></video>
+            </div>
+            <div class="wm-perturb-col">
+              <video
+                src="assets/videos/perturb/bridge-prophet-fail-3_web.mp4"
+                autoplay loop muted playsinline preload="auto"></video>
+            </div>
+            <div class="wm-perturb-col">
+              <video
+                src="assets/videos/perturb/bridge-prophet-fail-5_web.mp4"
+                autoplay loop muted playsinline preload="auto"></video>
+            </div>
+          </div>
+
+          <p class="wm-perturb-caption">
+            On the held out BRIDGE dataset, perturbed actions lead to plausible but failing rollouts (missed grasps, overshoots, unstable stacks), showing that Prophet generalizes to new setups while still faithfully reflecting the perturbed control.
+          </p>
+        </div>
+      </section> -->
+
+      <!-- <section class="interactive-section" id="interactive-demo-7dof">
+        <h3 class="wm-section-title">Interactive Demo: 2-step 7-DoF control</h3>
+        <ol class="interactive-bullets">
+          <li>Pick one <strong>Arm translation</strong>.</li>
+          <li>Pick one <strong>Arm rotation / gripper</strong>.</li>
+          <li>
+            Click <strong>Generate rollout</strong> to play the rollout.
+          </li>
+          <li>
+            Click <strong>Reset</strong> to return to the initial frame.
+          </li>
+        </ol>
+
+        <div
+          class="interactive-demo"
+          data-base-path="assets/videos/interact_demo/demo-7-dof-control"
+          data-cover-frame="assets/videos/interact_demo/demo-7-dof-control/cover_frame.png"
+        >
+          <div class="interact-video-wrapper">
+            <img class="interact-cover" src="assets/videos/interact_demo/demo-7-dof-control/cover_frame.png" alt="Initial frame" />
+            <video class="interact-video" muted playsinline preload="auto"></video>
+          </div>
+
+
+          <div class="interact-controls">
+            <div class="interact-group">
+              <div class="interact-group-title">Arm translation</div>
+              <button
+                class="interact-btn"
+                data-group="move"
+                data-value="back"
+              >
+                Backwards
+              </button>
+              <button
+                class="interact-btn"
+                data-group="move"
+                data-value="left-right"
+              >
+                Towards camera
+              </button>
+              <button
+                class="interact-btn"
+                data-group="move"
+                data-value="up"
+              >
+                Upwards
+              </button>
+            </div>
+
+            <div class="interact-group">
+              <div class="interact-group-title">Arm rotation / gripper</div>
+              <button
+                class="interact-btn"
+                data-group="grip"
+                data-value="pitch"
+              >
+                Pitch
+              </button>
+              <button
+                class="interact-btn"
+                data-group="grip"
+                data-value="roll"
+              >
+                Roll
+              </button>
+              <button
+                class="interact-btn"
+                data-group="grip"
+                data-value="yaw"
+              >
+                Yaw
+              </button>
+              <button
+                class="interact-btn"
+                data-group="grip"
+                data-value="loose"
+              >
+                Open
+              </button>
+
+          </div>
+
+            <div class="interact-actions">
+              <button class="interact-main-btn" data-action="generate">Generate rollout</button>
+              <button class="interact-secondary-btn" data-action="stop">Reset</button>
+            </div>
+        </div>
+      </section> -->
+      <section class="interactive-section" id="interactive-demo-cm">
+        <h3 class="wm-section-title">Interactive Demo: 3-step precise control</h3>
+        <p class="interact-hint">
+          From top to bottom, pick the <strong>1st</strong>, <strong>2nd</strong>,
+          <strong>3rd move</strong>, then the <strong>movement distance</strong>.
+          The three moves form one control sequence.
+        </p>
+        <div
+          class="interactive-demo"
+          data-base-path="assets/videos/interact_demo/demo-cm-control"
+          data-cover-frame="assets/videos/interact_demo/demo-cm-control/cover_frame.png"
+        >
+          <div class="interact-video-wrapper">
+            <img
+              class="interact-cover"
+              src="assets/videos/interact_demo/demo-cm-control/cover_frame.png"
+              alt="Initial frame"
+            />
+            <video class="interact-video" muted playsinline preload="auto"></video>
+          </div>
+
+        <div class="interact-controls">
+          <div class="interact-group">
+            <div class="interact-group-title">Choose a control sequence</div>
+
+            <div class="interact-grid-4x2">
+              <button class="interact-btn" data-group="step1" data-value="forward">
+                Forward
+              </button>
+              <button class="interact-btn" data-group="step1" data-value="right">
+                Right
+              </button>
+              <button class="interact-btn" data-group="step2" data-value="forward">
+                Forward
+              </button>
+              <button class="interact-btn" data-group="step2" data-value="stay">
+                Stay
+              </button>
+
+              <button class="interact-btn" data-group="step3" data-value="left">
+                Left
+              </button>
+              <button class="interact-btn" data-group="step3" data-value="right">
+                Right
+              </button>
+              <button class="interact-btn" data-group="dist" data-value="10">
+                10&nbsp;cm
+              </button>
+              <button class="interact-btn" data-group="dist" data-value="20">
+                20&nbsp;cm
+              </button>
+            </div>
+          </div>
+
+          <div class="interact-actions">
+            <button class="interact-main-btn" data-action="generate">
+              Generate rollout
+            </button>
+            <button class="interact-secondary-btn" data-action="stop">
+              Reset
+            </button>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      <section class="interactive-section" id="interactive-demo-bridge">
+        <h3 class="wm-section-title">Interactive Demo: BRIDGE multi task</h3>
+        <p class="interact-hint">
+          All six options are <strong>action-edited rollouts</strong> from the same
+          scene. Pick one button to play its task.
+        </p>
+        <div
+          class="interactive-demo"
+          data-base-path="assets/videos/interact_demo/demo-bridge-task"
+          data-cover-frame="assets/videos/interact_demo/demo-bridge-task/cover_frame.png"
+        >
+          <div class="interact-video-wrapper">
+            <img
+              class="interact-cover"
+              src="assets/videos/interact_demo/demo-bridge-task/cover_frame.png"
+              alt="Initial frame"
+            />
+            <video class="interact-video" muted playsinline preload="auto"></video>
+          </div>
+
+          <div class="interact-controls">
+            <div class="interact-group">
+              <div class="interact-group-title">Choose a sub-task</div>
+              <div class="interact-grid-3x2">
+                <!-- 上排 -->
+                <button class="interact-btn" data-step="move_the_bowl">
+                  Move the bowl
+                </button>
+                <button class="interact-btn" data-step="pickup_the_carrot">
+                  Pick up the carrot
+                </button>
+                <button class="interact-btn" data-step="pickup_the_spoon">
+                  Pick up the spoon
+                </button>
+                <!-- 下排 -->
+                <button class="interact-btn" data-step="put_the_carrot_into_bowl">
+                  Put carrot into bowl
+                </button>
+                <button class="interact-btn" data-step="sweep_the_cloth">
+                  Sweep the cloth
+                </button>
+                <button class="interact-btn" data-step="cover_spoon_with_the_cloth">
+                  Cover spoon with cloth
+                </button>
+              </div>
+            </div>
+
+            <div class="interact-actions">
+              <button class="interact-main-btn" data-action="generate">
+                Generate rollout
+              </button>
+              <button class="interact-secondary-btn" data-action="stop">
+                Reset
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="interactive-section" id="interactive-demo-2arm">
+        <h3 class="wm-section-title">Interactive Demo: 2-step dual-arm control</h3>
+        <p class="interact-hint" style="text-align:center;">
+          Try <strong>2-step translations</strong> of each arm or
+          <strong>2-step roll / pitch / yaw rotations</strong> of both arms.
+        </p>
+        <div
+          class="interactive-demo"
+          data-base-path="assets/videos/interact_demo/demo-2arm-control"
+          data-cover-frame="assets/videos/interact_demo/demo-2arm-control/cover_frame.png"
+        >
+          <div class="interact-video-wrapper">
+            <img
+              class="interact-cover"
+              src="assets/videos/interact_demo/demo-2arm-control/cover_frame.png"
+              alt="Initial frame"
+            />
+            <video class="interact-video" muted playsinline preload="auto"></video>
+          </div>
+
+          <div class="interact-controls">
+            <div class="interact-group">
+              <div class="interact-group-title">Control the left arm only</div>
+              <div class="interact-grid-3x2">
+                <button
+                  class="interact-btn"
+                  data-arm="left"
+                  data-slot="first"
+                  data-dir="f"
+                >
+                  Forward
+                </button>
+                <button
+                  class="interact-btn"
+                  data-arm="left"
+                  data-slot="first"
+                  data-dir="r"
+                >
+                  Right
+                </button>
+                <button
+                  class="interact-btn"
+                  data-arm="left"
+                  data-slot="first"
+                  data-dir="u"
+                >
+                  Up
+                </button>
+
+                <button
+                  class="interact-btn"
+                  data-arm="left"
+                  data-slot="second"
+                  data-dir="f"
+                >
+                  Forward
+                </button>
+                <button
+                  class="interact-btn"
+                  data-arm="left"
+                  data-slot="second"
+                  data-dir="r"
+                >
+                  Right
+                </button>
+                <button
+                  class="interact-btn"
+                  data-arm="left"
+                  data-slot="second"
+                  data-dir="u"
+                >
+                  Up
+                </button>
+              </div>
+
+
+            </div>
+              <div class="interact-actions">
+                <button
+                  class="interact-main-btn"
+                  data-action="generate"
+                  data-target-arm="left"
+                >
+                  Generate rollout
+                </button>
+                <button
+                  class="interact-secondary-btn"
+                  data-action="stop"
+                  data-target-arm="left"
+                >
+                  Reset
+                </button>
+              </div>
+            <div class="interact-group">
+              <div class="interact-group-title">Control the right arm only</div>
+
+              <div class="interact-grid-3x2">
+                <button
+                  class="interact-btn"
+                  data-arm="right"
+                  data-slot="first"
+                  data-dir="b"
+                >
+                  Back
+                </button>
+                <button
+                  class="interact-btn"
+                  data-arm="right"
+                  data-slot="first"
+                  data-dir="d"
+                >
+                  Down
+                </button>
+                <button
+                  class="interact-btn"
+                  data-arm="right"
+                  data-slot="first"
+                  data-dir="r"
+                >
+                  Right
+                </button>
+
+                <button
+                  class="interact-btn"
+                  data-arm="right"
+                  data-slot="second"
+                  data-dir="b"
+                >
+                  Back
+                </button>
+                <button
+                  class="interact-btn"
+                  data-arm="right"
+                  data-slot="second"
+                  data-dir="d"
+                >
+                  Down
+                </button>
+                <button
+                  class="interact-btn"
+                  data-arm="right"
+                  data-slot="second"
+                  data-dir="r"
+                >
+                  Right
+                </button>
+              </div>
+            </div>
+
+            <div class="interact-actions">
+              <button class="interact-main-btn" data-action="generate">
+                Generate rollout
+              </button>
+              <button class="interact-secondary-btn" data-action="stop">
+                Reset
+              </button>
+            </div>
+
+            <div class="interact-group">
+              <div class="interact-group-title">Rotate both arms (roll / pitch / yaw)</div>
+
+              <div class="interact-grid-3x2">
+                <button
+                  class="interact-btn"
+                  data-arm="both"
+                  data-slot="first"
+                  data-dir="roll"
+                >
+                  Roll
+                </button>
+                <button
+                  class="interact-btn"
+                  data-arm="both"
+                  data-slot="first"
+                  data-dir="pitch"
+                >
+                  Pitch
+                </button>
+                <button
+                  class="interact-btn"
+                  data-arm="both"
+                  data-slot="first"
+                  data-dir="yaw"
+                >
+                  Yaw
+                </button>
+
+                <button
+                  class="interact-btn"
+                  data-arm="both"
+                  data-slot="second"
+                  data-dir="roll"
+                >
+                  Roll
+                </button>
+                <button
+                  class="interact-btn"
+                  data-arm="both"
+                  data-slot="second"
+                  data-dir="pitch"
+                >
+                  Pitch
+                </button>
+                <button
+                  class="interact-btn"
+                  data-arm="both"
+                  data-slot="second"
+                  data-dir="yaw"
+                >
+                  Yaw
+                </button>
+              </div>
+            </div>
+
+            <div class="interact-actions">
+              <button class="interact-main-btn" data-action="generate" data-target-arm="both">
+                Generate rollout
+              </button>
+              <button class="interact-secondary-btn" data-action="stop">
+                Reset
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wm-edit-section" id="wm-edit">
+        <h3 class="wm-section-title">Action Editing with Prophet</h3>
+        <!-- <p class="wm-section-subtitle">
+          All clips below are rollouts generated by <strong>Prophet</strong>. For each robot,
+          we start from the same first frame and compare rollouts under GT actions
+          and hand-edited actions.
+        </p> -->
+
+        <div class="wm-edit-grid">
+
+          <!-- AgiBot -->
+          <div class="wm-edit-card">
+            <div class="wm-edit-header">
+              <span class="wm-edit-name">AgiBot: dual-arm manipulation</span>
+            </div>
+            <div class="wm-edit-videos">
+              <div class="wm-edit-method">
+                <div class="wm-edit-label">GT actions</div>
+                <video src="assets/videos/action_edit/generated_video_agibot_long_2.mp4"
+                      autoplay loop muted playsinline preload="auto"></video>
+              </div>
+              <div class="wm-edit-method">
+                <div class="wm-edit-label">Edited actions</div>
+                <video src="assets/videos/action_edit/generated_video_agibot_long_2_rotation_2.mp4"
+                      autoplay loop muted playsinline preload="auto"></video>
+              </div>
+            </div>
+            <p class="wm-edit-caption">
+              Prophet replays the original dual-arm motion under GT actions (left),
+              and follows an edited sequence where the left gripper is frozen while the right
+              arm keeps moving to the right (right).
+            </p>
+          </div>
+
+          <!-- OpenX -->
+          <div class="wm-edit-card">
+            <div class="wm-edit-header">
+              <span class="wm-edit-name">Open-X: precise lateral motion</span>
+            </div>
+            <div class="wm-edit-videos">
+              <div class="wm-edit-method">
+                <div class="wm-edit-label">GT actions</div>
+                <video src="assets/videos/action_edit/generated_video_openx.mp4"
+                      autoplay loop muted playsinline preload="auto"></video>
+              </div>
+              <div class="wm-edit-method">
+                <div class="wm-edit-label">Edited actions</div>
+                <video src="assets/videos/action_edit/generated_video_openx_move.mp4"
+                      autoplay loop muted playsinline preload="auto"></video>
+              </div>
+            </div>
+            <p class="wm-edit-caption">
+              With GT actions (left), Prophet rolls out the nominal trajectory.
+              When we edit the action chunk to push the gripper further left (right),
+              the rollout smoothly adjusts end-effector and object motion over time.
+            </p>
+          </div>
+
+          <div class="wm-edit-card">
+            <div class="wm-edit-header">
+              <span class="wm-edit-name">DROID: grasping under gripper edits</span>
+            </div>
+            <div class="wm-edit-videos">
+              <div class="wm-edit-method">
+                <div class="wm-edit-label">GT actions</div>
+                <video src="assets/videos/action_edit/generated_video_droid.mp4"
+                      autoplay loop muted playsinline preload="auto"></video>
+              </div>
+              <div class="wm-edit-method">
+                <div class="wm-edit-label">Edited actions</div>
+                <video src="assets/videos/action_edit/generated_video_droid_gripper.mp4"
+                      autoplay loop muted playsinline preload="auto"></video>
+              </div>
+            </div>
+            <p class="wm-edit-caption">
+              Under GT actions, Prophet produces a successful pick-and-place (left).
+              When we edit the actions to keep the gripper open throughout (right),
+              the object is never grasped and the rollout depicts a realistic failure.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- <section class="wm-flow-section" id="wm-flow">
+        <h3 class="wm-section-title">Optical-Flow Evaluation & Visualization</h3>
+        <p class="wm-section-subtitle">
+          Pixel metrics like PSNR/SSIM make Cosmos and Prophet look similarly good in RGB,
+          but they barely capture whether the motion actually follows the control. We therefore
+          compare <strong>optical flow</strong> against the GT trajectory to directly
+          measure motion fidelity.
+        </p>
+
+        <ul class="wm-section-bullets wm-flow-bullets">
+          <li><strong>Measure motion, not appearance</strong>: evaluate flow fields instead of raw pixels.</li>
+          <li><strong>Better correlation with task success</strong>: misaligned grasps and pushes show up clearly in flow.</li>
+          <li><strong>Crucial for action-conditioned models</strong>: rewards models that truly follow the same actions.</li>
+        </ul>
+
+        <div class="wm-flow-grid">
+          <div class="wm-flow-col">
+            <div class="wm-flow-col-title">Ground truth</div>
+            <div class="wm-flow-block">
+              <div class="wm-flow-label">RGB rollout</div>
+              <video
+                src="assets/videos/optical_flow/optical_campare_gt_web.mp4"
+                autoplay loop muted playsinline preload="auto"></video>
+              <div class="wm-flow-metrics">
+                reference video
+              </div>
+            </div>
+            <div class="wm-flow-block">
+              <div class="wm-flow-label">Optical flow</div>
+              <video
+                src="assets/videos/optical_flow/optical_campare_gt_optical_web.mp4"
+                autoplay loop muted playsinline preload="auto"></video>
+              <div class="wm-flow-metrics">
+                reference flow
+              </div>
+            </div>
+          </div>
+
+          <div class="wm-flow-col">
+            <div class="wm-flow-col-title">Cosmos</div>
+            <div class="wm-flow-block">
+              <div class="wm-flow-label">RGB rollout</div>
+              <video
+                src="assets/videos/optical_flow/optical_campare_cosmos_web.mp4"
+                autoplay loop muted playsinline preload="auto"></video>
+              <div class="wm-flow-metrics">
+                PSNR&nbsp;21.56,&nbsp;SSIM&nbsp;0.783,&nbsp;tSSIM&nbsp;0.647
+              </div>
+            </div>
+            <div class="wm-flow-block">
+              <div class="wm-flow-label">Optical flow vs GT</div>
+              <video
+                src="assets/videos/optical_flow/optical_campare_cosmos_optical_web.mp4"
+                autoplay loop muted playsinline preload="auto"></video>
+              <div class="wm-flow-metrics">
+                EPE&nbsp;1.48,&nbsp;cos&nbsp;0.12
+              </div>
+            </div>
+          </div>
+
+          <div class="wm-flow-col">
+            <div class="wm-flow-col-title">Prophet</div>
+            <div class="wm-flow-block">
+              <div class="wm-flow-label">RGB rollout</div>
+              <video
+                src="assets/videos/optical_flow/optical_campare_prophet_web.mp4"
+                autoplay loop muted playsinline preload="auto"></video>
+              <div class="wm-flow-metrics">
+                PSNR&nbsp;22.79,&nbsp;SSIM&nbsp;0.793,&nbsp;tSSIM&nbsp;0.654
+              </div>
+            </div>
+            <div class="wm-flow-block">
+              <div class="wm-flow-label">Optical flow vs GT</div>
+              <video
+                src="assets/videos/optical_flow/optical_campare_prophet_optical_web.mp4"
+                autoplay loop muted playsinline preload="auto"></video>
+              <div class="wm-flow-metrics">
+                EPE&nbsp;1.09,&nbsp;cos&nbsp;0.22
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="wm-flow-caption">
+          RGB rollouts from Cosmos and Prophet look similar and obtain close PSNR/SSIM scores
+          (21.6&nbsp; / 0.78 vs. 22.8&nbsp; / 0.79), but the optical-flow metrics show a much clearer
+          gap (EPE&nbsp;1.48&nbsp;&gt;&nbsp;1.09; cos&nbsp;0.12&nbsp;&lt;&nbsp;0.22). This confirms that
+          flow-based metrics are far more discriminative for evaluating action-conditioned world models.
+        </p>
+      </section> -->
+
+      <section class="rl-section" id="rl">
+        <!-- <h2 class="rl-title">VLA + Prophet + FlowScale</h2> -->
+        <!-- <p class="rl-intro">
+          We train VLA policies entirely inside the Prophet world model using a closed-loop
+          rollout–evaluate–update paradigm.
+        </p> -->
+<!-- 
+        <div class="rl-figure-wrapper">
+          <img
+            class="rl-figure"
+            src="assets/images/pipeline.png "
+            alt="Closed-loop training with VLA, Prophet world model, reward model, and FlowScale RL."
+          />
+          <p class="rl-figure-caption">
+            Closed-loop VLA post-training in Prophet: the policy predicts flow-based action chunks,
+            Prophet rolls out future video, a VLM-based reward model scores the trajectory, and
+            FA-GRPO&nbsp;+&nbsp;FlowScale updates the policy.
+          </p>
+        </div>
+
+        <ol class="rl-steps">
+          <li>
+            The <strong>VLA policy</strong> takes the instruction and current RGB frame and predicts a <strong>flow-based action chunk</strong>.
+          </li>
+          <li>
+            <strong>Prophet</strong> conditions on this chunk and rolls out the next few future frames.
+          </li>
+          <li>
+            We <strong>close the loop</strong> by updating the history buffer and feeding the
+            new observation back into the policy and Prophet to extend the rollout.
+          </li>
+          <li>
+            The full rollout clip is sent to a <strong>VLM-based reward model</strong> which
+            outputs a scalar success/failure score.
+          </li>
+          <li>
+            We apply <strong>FA-GRPO + FlowScale</strong> to update the VLA policy
+            using the flow-based action log-probabilities and reward.
+          </li>
+        </ol>
+
+        <div class="rl-keywords">
+          <span class="rl-tag">Closed-loop rollouts in imagination</span>
+          <span class="rl-tag">VLM-based reward models</span>
+          <span class="rl-tag">FlowScale for stable gradients</span>
+        </div>
+
+        <div class="rl-formula-box", id="fs">
+          <div class="rl-formula-title">FlowScale objective</div>
+
+          <p>
+            $$\mathcal{L}_{\text{FlowScale}}(\theta)
+            = -\,\mathbb{E}\Big[
+              \sum_{s,c,d} M_{s,c}\,
+              f_{\mathrm{clip}}\big(r_{s,c,d},\, w_{s,k}\,\hat A_{s,c}\big)
+            \Big]
+            + \beta\,\mathrm{KL}\big(\pi_\theta \Vert \pi_{\text{ref}}\big).$$
+          </p>
+
+           <div class="rl-formula-subtitle">Per-step noise scale</div>
+          <p>
+            $$\mathrm{std}_{s,k} \propto
+              \sqrt{\sigma(t_{s,k})}\,\sqrt{|\Delta t_\ell|},
+              \qquad
+              \sigma^2_{s,k} := \mathrm{std}^2_{s,k}.$$
+          </p>
+
+          <div class="rl-formula-subtitle">Weight construction</div>
+          <p>
+            $$\tilde w_{s,k} = (\sigma^2_{s,k} + \varepsilon)^p,\qquad
+              w_{s,k} = \mathrm{clip}\!\left(
+                (1-\alpha)\,
+                \frac{\tilde w_{s,k}}{\frac{1}{K}\sum_{j=1}^K \tilde w_{s,j}}
+                + \alpha,\; w_{\min},\; w_{\max}
+              \right).$$
+          </p>
+        </div>
+
+        <div class="rl-formula-note">
+            FlowScale uses the local diffusion/flow noise level σ<sub>s,k</sub><sup>2</sup> to build
+            per-step weights w<sub>s,k</sub>, which rescale the PPO ratios r<sub>s,c,d</sub> before
+            clipping. This yields more stable gradients for flow-based action heads while keeping
+            a KL trust-region constraint to the reference policy.
+          </div>
+        <div class="rm-section" id="reward-model">
+          <h3 class="rm-title">Reward model: video–level VLM judge</h3>
+          <p class="rm-intro">
+            We use a <strong>VLM–based reward model</strong> as a video judge: given a rollout clip and a
+            task specific prompt, it decides whether the robot <strong>succeeds</strong> or
+            <strong>fails</strong> on that trial.
+          </p>
+          <ul class="rm-bullets">
+            <li>Each task prompt spells out <strong>clear success criteria</strong> (e.g., for PulloutTissue: visible contact, tissue extraction, and completion).</li>
+            <li>The reward model is instructed to first give a <strong>step–by–step reasoning</strong> over key frames, then output a final <strong>Success / Failure</strong> label only.</li>
+            <li>This yields <strong>high recall, reasonably precise binary rewards</strong> for our closed–loop RL on real robot data.</li>
+          </ul>
+
+        <div class="rm-cards">
+          <div class="rm-card">
+            <div class="rm-card-tag">Real-world prompt</div>
+            <div class="rm-card-title">PulloutTissueScene</div>
+            <div class="rm-card-body">
+              <p>
+                You will be shown a video. Determine if the robot succeeds at pulling out a tissue.
+              </p>
+
+              <p>
+                Success requires <strong>both</strong> of the following to be clearly visible
+                (with flexible interpretation):
+              </p>
+
+              <ol>
+                <li>
+                  <strong>Grip and pull.</strong>
+                  The gripper (or fingers) must make contact with any visible part of a tissue
+                  and pull it outward from the box or container. Partial pulling is acceptable
+                  as long as the tissue visibly moves outwards by a noticeable distance.
+                </li>
+                <li>
+                  <strong>Extraction.</strong>
+                  The tissue must be partially or fully separated from the box opening. It can
+                  still be held in the gripper or fall outside after being pulled. The tissue
+                  does not need to be lifted completely off the surface, as long as it is
+                  visibly extracted from the opening.
+                </li>
+              </ol>
+
+              <p>
+                Additionally, the gripper must make contact with some object for the attempt
+                to be considered valid.
+              </p>
+
+              <p>
+                <strong>Do not give a success easily.</strong>
+                If none of the objects move, the task fails.
+              </p>
+
+              <p>
+                First, provide your step-by-step reasoning. Then, provide the final answer.
+                Output the final answer strictly as one of:
+                <code>\box{Success}</code> or <code>\box{Failure}</code>.
+              </p>
+            </div>
+          </div>
+
+          <div class="rm-card">
+            <div class="rm-card-tag">Example RM response</div>
+            <div class="rm-card-title">PulloutTissueScene</div>
+            <div class="rm-card-body">
+              <p><strong>Step-by-step reasoning:</strong></p>
+              <ol>
+                <li>
+                  <strong>Initial position.</strong>
+                  In the first few frames (<code>frame_step0</code> to
+                  <code>frame_step5</code>), the robot arm is positioned above the tissue box,
+                  indicating preparation for interaction.
+                </li>
+                <li>
+                  <strong>Contact and grip.</strong>
+                  By <code>frame_step20</code>, the robot's grippers make contact with the
+                  tissue box. However, there is no clear indication that they are gripping a
+                  tissue yet.
+                </li>
+                <li>
+                  <strong>Pulling motion.</strong>
+                  From <code>frame_step30</code> to <code>frame_step35</code>, the robot arm
+                  begins to move, suggesting an attempt to pull something. It appears that the
+                  grippers have made contact with tissue inside the box.
+                </li>
+                <li>
+                  <strong>Tissue movement.</strong>
+                  In <code>frame_step35</code>, a tissue becomes partially visible, extending
+                  out of the box. This indicates that the robot has successfully initiated the
+                  extraction process.
+                </li>
+                <li>
+                  <strong>Extraction confirmation.</strong>
+                  By <code>frame_step30</code> and <code>frame_step40</code>, the tissue is
+                  more visibly separated from the box, confirming the extraction step. The
+                  tissue is now clearly outside the box opening.
+                </li>
+                <li>
+                  <strong>Completion.</strong>
+                  The subsequent frames show the tissue being fully pulled out and then
+                  released. There is no ambiguity about the tissue being extracted.
+                </li>
+              </ol>
+
+              <p style="margin-top:6px;">
+                <strong>Final answer:</strong> <code>\box{Success}</code>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        </div> -->
+
+        <section class="real-section" id="real-placebowl">
+          <h3 class="wm-section-title">Real world PlaceBowl: RL discovers new behavior</h3>
+
+          <div class="rw-video-row">
+            <div class="rw-video-card">
+              <div class="rw-video-label">Training demonstrations</div>
+              <video
+                src="assets/videos/rl_behavior/episode_000005_f551_604_ppt.mp4"
+                autoplay
+                loop
+                muted
+                playsinline
+                preload="auto"
+              ></video>
+            </div>
+
+            <div class="rw-video-card">
+              <div class="rw-video-label">SFT policy (Pi0.5)</div>
+              <video
+                src="assets/videos/rl_behavior/episode_000019_ppt.mp4"
+                autoplay
+                loop
+                muted
+                playsinline
+                preload="auto"
+              ></video>
+            </div>
+
+            <div class="rw-video-card">
+              <div class="rw-video-label">ProphRL (Ours)</div>
+              <video
+                src="assets/videos/rl_behavior/episode_000015_ppt.mp4"
+                autoplay
+                loop
+                muted
+                playsinline
+                preload="auto"
+              ></video>
+            </div>
+          </div>
+          <!-- <ul class="realworld-bullets">
+            <li>Training demonstrations for <strong>PlaceBowl</strong> only show <strong>left-side grasps</strong>.</li>
+            <li>The SFT policy occasionally samples a <strong>right-side approach</strong>, but these rare trajectories are unstable and unreliable.</li>
+            <li>Whenever a right-side attempt succeeds, the <strong>reward model</strong> assigns a positive signal.</li>
+            <li>RL with <strong>FA-GRPO + FlowScale</strong> amplifies this weak mode, turning the right-side strategy into a <strong>consistent and reliable behavior</strong>.</li>
+            <li>This highlights a key difference: <strong>SFT imitates the dataset</strong>, whereas <strong>RL can discover and reinforce behaviors</strong> that are only weakly expressed in demonstrations.</li>
+          </ul> -->
+          <ul class="realworld-bullets">
+            <li>
+              Training demos for <strong>PlaceBowl</strong> only contain
+              <strong>left-side grasps</strong>.
+            </li>
+            <li>
+              The <strong>SFT policy</strong> occasionally tries a
+              <strong>right-side approach</strong>, but these cases are
+              <strong>rare and unstable</strong>.
+            </li>
+            <li>
+              Successful right-side trials receive <strong>positive reward</strong>,
+              and RL with <strong>FA-GRPO + FlowScale</strong> amplifies this
+              weak mode into a <strong>consistent right-side strategy</strong>.
+            </li>
+            <li>
+              In contrast to <strong>SFT imitation</strong>, RL can
+              <strong>discover and reinforce</strong> behaviors only
+              weakly present in the data.
+            </li>
+          </ul>
+        </section>
+
+        <section class="realworld-section" id="pullouttissue-demo">
+          <h3 class="wm-section-title">Real world PulloutTissue</h3>
+
+          <div class="realworld-grid">
+            <div class="realworld-card">
+              <div class="realworld-label">SFT policy – trial 1</div>
+              <video
+                class="slow-video"
+                src="assets/videos/rl_tissue/episode_000034.mp4"
+                autoplay
+                loop
+                muted
+                playsinline
+                preload="auto"
+              ></video>
+            </div>
+
+            <div class="realworld-card">
+              <div class="realworld-label">SFT policy – trial 2</div>
+              <video
+                class="slow-video"
+                src="assets/videos/rl_tissue/episode_000035.mp4"
+                autoplay
+                loop
+                muted
+                playsinline
+                preload="auto"
+              ></video>
+            </div>
+
+            <div class="realworld-card">
+              <div class="realworld-label">ProphRL (Ours) – trial 1</div>
+              <video
+                class="slow-video"
+                src="assets/videos/rl_tissue/episode_000044.mp4"
+                autoplay
+                loop
+                muted
+                playsinline
+                preload="auto"
+              ></video>
+            </div>
+
+            <div class="realworld-card">
+              <div class="realworld-label">ProphRL (Ours) – trial 2</div>
+              <video
+                class="slow-video"
+                src="assets/videos/rl_tissue/episode_000045.mp4"
+                autoplay
+                loop
+                muted
+                playsinline
+                preload="auto"
+              ></video>
+            </div>
+          </div>
+
+        <ul class="realworld-bullets">
+          <li>
+            <strong>SFT policy</strong> often <strong>drifts sideways</strong>, makes
+            <strong>weak contact</strong> with the tissue edge, and <strong>misses the pull</strong>.
+          </li>
+          <li>
+            <strong>ProphRL</strong> shows a <strong>straighter approach</strong>,
+            <strong>firmer edge contact</strong>, and <strong>more successful pulls</strong>.
+          </li>
+          <li>
+            <strong>RL training</strong> yields <strong>more stable and reliable policies</strong> in the real world.
+          </li>
+        </ul>
+        </section>
+
+        <section class="rl-results-section" id="rl-results">
+          <h3 class="wm-section-title">RL post-training results</h3>
+          <!-- <p class="wm-section-subtitle">
+            We post-train different VLA backbones inside <strong>Prophet</strong> with
+            <strong>FA-GRPO + FlowScale</strong>. Tables report task success
+            (mean ± stdev) and absolute gains over the SFT baseline.
+          </p>
+          <ul class="rl-results-bullets">
+            <li>RL is run <strong>separately for each task</strong>, starting from the same SFT checkpoint.</li>
+            <li>The world model <strong>Prophet</strong> is fixed during RL, only the VLA policy is updated.</li>
+            <li>See the main paper experiments for
+              <strong>multi-task RL results</strong> and  <strong>world-model ablations</strong>.
+            </li>          
+          </ul> -->
+          <div class="rl-table-block">
+            <h4 class="rl-table-title">SimplerEnv (WidowX) on BRIDGE</h4>
+            <p class="rl-table-caption">
+              Single-image VLA policies are first SFT on BRIDGE and then post-trained
+              with FA-GRPO and FlowScale in Prophet. We summarize overall success and
+              gains over SFT.
+            </p>
+
+            <div class="scrollable-table">
+              <table class="rl-table">
+                <thead>
+                  <tr>
+                    <th>Backbone</th>
+                    <th>Training stage</th>
+                    <th>Overall success&nbsp;[%]</th>
+                    <th>Gain vs. SFT</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="backbone-cell" rowspan="3">VLA–Adapter–0.5B</td>
+                    <td>
+                      <span class="rl-tag rl-tag-base">SFT only</span>
+                    </td>
+                    <td>23.3 ± 2.2</td>
+                    <td class="rl-gain">—</td> 
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="rl-tag rl-tag-fa">+ FA–GRPO</span>
+                    </td>
+                    <td>38.2 ± 2.4</td>
+                    <td class="rl-gain">(+14.9)</td>
+                  </tr>
+                  <tr class="rl-row-highlight">
+                    <td>
+                      <span class="rl-tag rl-tag-flow">+ FA–GRPO &amp; FlowScale</span>
+                    </td>
+                    <td><strong>41.0 ± 2.4</strong></td>
+                    <td class="rl-gain"><strong>(+17.7)</strong></td>
+                  </tr>
+
+                  <tr>
+                    <td class="backbone-cell" rowspan="3">Pi0.5–3B</td>
+                    <td>
+                      <span class="rl-tag rl-tag-base">SFT only</span>
+                    </td>
+                    <td>38.9 ± 2.6</td>
+                    <td class="rl-gain">—</td> 
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="rl-tag rl-tag-fa">+ FA–GRPO</span>
+                    </td>
+                    <td>46.9 ± 3.0</td>
+                    <td class="rl-gain">(+8.0)</td>
+                  </tr>
+                  <tr class="rl-row-highlight">
+                    <td>
+                      <span class="rl-tag rl-tag-flow">+ FA–GRPO &amp; FlowScale</span>
+                    </td>
+                    <td><strong>51.0 ± 1.2</strong></td>
+                    <td class="rl-gain"><strong>(+12.1)</strong></td>
+                  </tr>
+
+                  <tr>
+                    <td class="backbone-cell" rowspan="3">OpenVLA–OFT–7B</td>
+                    <td>
+                      <span class="rl-tag rl-tag-base">SFT only</span>
+                    </td>
+                    <td>25.0 ± 1.8</td>
+                    <td class="rl-gain">—</td> 
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="rl-tag rl-tag-fa">+ FA–GRPO</span>
+                    </td>
+                    <td>29.2 ± 1.8</td>
+                    <td class="rl-gain">(+4.2)</td>
+                  </tr>
+                  <tr class="rl-row-highlight">
+                    <td>
+                      <span class="rl-tag rl-tag-flow">+ FA–GRPO &amp; FlowScale</span>
+                    </td>
+                    <td><strong>30.9 ± 0.6</strong></td>
+                    <td class="rl-gain"><strong>(+5.9)</strong></td>
+                  </tr>
+                </tbody>
+
+              </table>
+            </div>
+          </div>
+
+          <div class="rl-table-block">
+            <h4 class="rl-table-title">Real-robot evaluation on UR30e</h4>
+            <p class="rl-table-caption">
+              All policies are first SFT on real-robot data, then post-trained with
+              FA-GRPO + FlowScale in Prophet and finally deployed on the UR30e arm.
+              We report overall real-world success and absolute gains.
+            </p>
+
+            <div class="scrollable-table">
+              <table class="rl-table">
+                <thead>
+                  <tr>
+                    <th>Backbone</th>
+                    <th>Training stage</th>
+                    <th>Overall success&nbsp;[%]</th>
+                    <th>Gain vs. SFT</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="backbone-cell" rowspan="2">VLA–Adapter–0.5B</td>
+                    <td>
+                      <span class="rl-tag rl-tag-base">SFT only</span>
+                    </td>
+                    <td>35.8 ± 3.1</td>
+                    <td class="rl-gain">—</td> 
+                  </tr>
+                  <tr class="rl-row-highlight">
+                    <td>
+                      <span class="rl-tag rl-tag-flow">+ FA–GRPO &amp; FlowScale</span>
+                    </td>
+                    <td><strong>60.4 ± 0.7</strong></td>
+                    <td class="rl-gain"><strong>(+24.6)</strong></td>
+                  </tr>
+
+                  <tr>
+                    <td class="backbone-cell" rowspan="2">Pi0.5–3B</td>
+                    <td>
+                      <span class="rl-tag rl-tag-base">SFT only</span>
+                    </td>
+                    <td>52.1 ± 3.8</td>
+                    <td class="rl-gain">—</td> 
+                  </tr>
+                  <tr class="rl-row-highlight">
+                    <td>
+                      <span class="rl-tag rl-tag-flow">+ FA–GRPO &amp; FlowScale</span>
+                    </td>
+                    <td><strong>82.1 ± 0.7</strong></td>
+                    <td class="rl-gain"><strong>(+30.0)</strong></td>
+                  </tr>
+
+                  <tr>
+                    <td class="backbone-cell" rowspan="2">OpenVLA–OFT–7B</td>
+                    <td>
+                      <span class="rl-tag rl-tag-base">SFT only</span>
+                    </td>
+                    <td>35.4 ± 0.7</td>
+                    <td class="rl-gain">—</td> 
+                  </tr>
+                  <tr class="rl-row-highlight">
+                    <td>
+                      <span class="rl-tag rl-tag-flow">+ FA–GRPO &amp; FlowScale</span>
+                    </td>
+                    <td><strong>62.9 ± 0.7</strong></td>
+                    <td class="rl-gain"><strong>(+27.5)</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+      <!-- <section class="citation-section", id="citation">
+        <h2 class="section-title">Bibtex</h2>
+      
+        <p>If you find our work helpful, please consider citing us:</p>
+      
+        <pre><code>@article{zhang2025prophrl,
+        title={Reinforcing Action Policies by Prophesying},
+        author={Zhang, Jiahui and Huang, Ze and Gu, Chun and Ma, Zipei and Zhang, Li},
+        year={2025},
+        journal={arXiv preprint arXiv:2511.20633},
+        }</code></pre>
+      </section> -->
+      <section class="citation-section" id="citation">
+        <h2 class="section-title">Bibtex</h2>
+
+        <p>If you find this project or dataset helpful, please consider citing our paper:</p>
+
+        <div class="bibtex-card">
+          <button class="bibtex-copy-btn" type="button" aria-label="Copy BibTeX">
+            ⧉
+          </button>
+
+      <pre class="bibtex-pre"><code class="bibtex-code">
+      <span class="hl-key">@article</span><span class="hl-id">{zhang2025prophrl},</span>
+        <span class="hl-field">title</span><span class="hl-op">=</span>{<span class="hl-string">Reinforcing Action Policies by Prophesying</span>},
+        <span class="hl-field">author</span><span class="hl-op">=</span>{<span class="hl-string">Zhang, Jiahui and Huang, Ze and Gu, Chun and Ma, Zipei and Zhang, Li</span>},
+        <span class="hl-field">year</span><span class="hl-op">=</span>{<span class="hl-number">2025</span>},
+        <span class="hl-field">journal</span><span class="hl-op">=</span>{<span class="hl-string">arXiv preprint arXiv:2511.20633</span>},
+      }
+      </code></pre>
+        </div>
+      </section>
+        
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const tabs = document.querySelectorAll(".wm-interactive-tab");
+            const cases = document.querySelectorAll(".wm-interactive-case");
+
+            tabs.forEach(tab => {
+              tab.addEventListener("click", () => {
+                const target = tab.getAttribute("data-demo");
+
+                tabs.forEach(t => t.classList.remove("active"));
+                tab.classList.add("active");
+
+                cases.forEach(block => {
+                  if (block.getAttribute("data-demo") === target) {
+                    block.classList.add("active");
+                  } else {
+                    block.classList.remove("active");
+                  }
+                });
+              });
+            });
+          });
+        </script>
+        <script>
+          document.querySelectorAll('#real-placebowl video').forEach(v => {
+            v.playbackRate = 0.33;
+          });
+        </script>
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll("#pullouttissue-demo video.slow-video").forEach(v => {
+              try {
+                v.playbackRate = 0.33;
+              } catch (e) {}
+            });
+          });
+        </script>
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".nav-item.has-submenu > .nav-parent").forEach(parent => {
+              parent.addEventListener("click", (e) => {
+                e.preventDefault();
+
+                const item = parent.closest(".nav-item");
+                const alreadyOpen = item.classList.contains("open");
+
+                document.querySelectorAll(".nav-item.has-submenu.open").forEach(i => {
+                  i.classList.remove("open");
+                });
+
+                if (!alreadyOpen) {
+                  item.classList.add("open");
+                }
+              });
+            });
+
+            document.addEventListener("click", (e) => {
+              const isInNav = e.target.closest(".site-nav");
+              if (!isInNav) {
+                document.querySelectorAll(".nav-item.has-submenu.open").forEach(i => {
+                  i.classList.remove("open");
+                });
+              }
+            });
+          });
+        </script>
+        <script>
+          (function () {
+            const demo = document.querySelector("#interactive-demo-7dof .interactive-demo");
+            if (!demo) return;
+
+            const basePath   = demo.dataset.basePath;
+            const coverSrc   = demo.dataset.coverFrame;
+            const cover      = demo.querySelector(".interact-cover");
+            const video      = demo.querySelector(".interact-video");
+            const buttons    = demo.querySelectorAll(".interact-btn");
+            const generateBtn= demo.querySelector('[data-action="generate"]');
+            const stopBtn    = demo.querySelector('[data-action="stop"]');
+
+            let selectedMove = null;
+            let selectedEdit = null;
+
+            video.playbackRate = 5;
+
+            let currentSeq = null;
+            let currentIdx = 0;
+
+            function resetToCover() {
+              video.pause();
+              video.removeAttribute("src");
+              video.load();
+              video.style.display = "none";
+
+              if (coverSrc) {
+                cover.src = coverSrc;
+              }
+              cover.style.display = "block";
+
+              currentSeq = null;
+              currentIdx = 0;
+            }
+
+            function playSequence(paths) {
+              if (!paths || !paths.length) return;
+
+              currentSeq = paths;
+              currentIdx = 0;
+
+              cover.style.display = "none";
+              video.style.display = "block";
+
+              const playIndex = (idx) => {
+                if (!currentSeq || !currentSeq.length) return;
+                const safeIdx = ((idx % currentSeq.length) + currentSeq.length) % currentSeq.length;
+                currentIdx = safeIdx;
+                video.src = currentSeq[safeIdx];
+                video.load();
+                video.play().catch((e) => {
+                  console.warn("Video play failed:", e);
+                });
+              };
+
+              video.onended = null;
+              video.onended = () => {
+                if (!currentSeq || !currentSeq.length) return;
+                const nextIdx = (currentIdx + 1) % currentSeq.length;
+                playIndex(nextIdx);
+              };
+
+              playIndex(0);
+            }
+
+            buttons.forEach((btn) => {
+              btn.addEventListener("click", () => {
+                const group = btn.dataset.group;
+                const value = btn.dataset.value;
+
+                buttons.forEach((b) => {
+                  if (b.dataset.group === group) b.classList.remove("active");
+                });
+                btn.classList.add("active");
+
+                if (group === "move") selectedMove = value;
+                if (group === "grip") selectedEdit = value;
+              });
+            });
+
+            generateBtn.addEventListener("click", () => {
+              if (!selectedMove || !selectedEdit) {
+                alert("Please pick one spatial move and one gripper edit first.");
+                return;
+              }
+
+              const folderName = `${selectedMove} + ${selectedEdit}`;
+              const seq = [
+                `${basePath}/${folderName}/merged.mp4`,
+              ];
+
+              playSequence(seq);
+            });
+
+            stopBtn.addEventListener("click", () => {
+              resetToCover();
+            });
+
+            resetToCover();
+          })();
+        </script>
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const root = document.querySelector("#interactive-demo-cm .interactive-demo");
+          if (!root) return;
+
+          const basePath = root.dataset.basePath;
+          const video = root.querySelector(".interact-video");
+          const cover = root.querySelector(".interact-cover");
+          const buttons = root.querySelectorAll(".interact-btn");
+          const generateBtn = root.querySelector('[data-action="generate"]');
+          const stopBtn = root.querySelector('[data-action="stop"]');
+
+          const state = { step1: null, step2: null, step3: null, dist: null };
+          video.playbackRate = 5;
+          buttons.forEach((btn) => {
+            btn.addEventListener("click", () => {
+              const group = btn.dataset.group;
+              const value = btn.dataset.value;
+
+              buttons.forEach((b) => {
+                if (b.dataset.group === group) b.classList.remove("active");
+              });
+              btn.classList.add("active");
+              state[group] = value;
+            });
+          });
+
+          function buildFolderName() {
+            const { step1, step2, step3, dist } = state;
+            if (!step1 || !step2 || !step3 || !dist) return null;
+            return `${step1}_${step2}_${step3}_${dist}`;
+          }
+
+          generateBtn.addEventListener("click", () => {
+            const folder = buildFolderName();
+            if (!folder) {
+              alert("Please choose all three moves and a distance first.");
+              return;
+            }
+            const src = `${basePath}/${folder}/merged.mp4`;
+            if (video.src !== src) {
+              video.src = src;
+            }
+            cover.style.display = "none";
+            video.style.display = "block";
+            video.currentTime = 0;
+            video.play();
+          });
+
+          stopBtn.addEventListener("click", () => {
+              video.pause();
+              video.currentTime = 0;
+              video.style.display = "none";
+              cover.style.display = "";
+
+              buttons.forEach((b) => b.classList.remove("active"));
+              currentStep = null;
+          });
+        });
+        </script>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const root = document.querySelector(
+              "#interactive-demo-bridge .interactive-demo"
+            );
+            if (!root) return;
+
+            const basePath = root.dataset.basePath;
+            const video = root.querySelector(".interact-video");
+            const cover = root.querySelector(".interact-cover");
+            const buttons = root.querySelectorAll(".interact-btn");
+            const generateBtn = root.querySelector('[data-action="generate"]');
+            const stopBtn = root.querySelector('[data-action="stop"]');
+
+            let currentStep = null;
+            video.playbackRate = 5;
+
+            buttons.forEach((btn) => {
+              btn.addEventListener("click", () => {
+                buttons.forEach((b) => b.classList.remove("active"));
+                btn.classList.add("active");
+                currentStep = btn.dataset.step;
+              });
+            });
+
+            function getVideoSrc() {
+              if (!currentStep) return null;
+              if (currentStep === "full_task") {
+                return `${basePath}/merged.mp4`;
+              } else {
+                return `${basePath}/${currentStep}/merged.mp4`;
+              }
+            }
+
+            generateBtn.addEventListener("click", () => {
+              const src = getVideoSrc();
+              if (!src) {
+                alert("Please choose a sub-task first.");
+                return;
+              }
+
+              if (video.src !== src) {
+                video.src = src;
+              }
+              cover.style.display = "none";
+              video.style.display = "block";
+              video.currentTime = 0;
+              video.play();
+            });
+
+            // Reset
+            stopBtn.addEventListener("click", () => {
+              video.pause();
+              video.currentTime = 0;
+              video.style.display = "none";
+              cover.style.display = "";
+
+              buttons.forEach((b) => b.classList.remove("active"));
+              currentStep = null;
+            });
+          });
+        </script>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const card = document.querySelector(".bibtex-card");
+            if (!card) return;
+
+            const btn = card.querySelector(".bibtex-copy-btn");
+            const code = card.querySelector(".bibtex-code");
+
+            btn.addEventListener("click", () => {
+              const text = code.innerText.trim();
+
+              if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                  const old = btn.textContent;
+                  btn.textContent = "✓";
+                  setTimeout(() => (btn.textContent = old), 1200);
+                });
+              }
+            });
+          });
+        </script>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const root = document.querySelector(
+              "#interactive-demo-2arm .interactive-demo"
+            );
+            if (!root) return;
+
+            const basePath = root.dataset.basePath;
+            const video = root.querySelector(".interact-video");
+            const cover = root.querySelector(".interact-cover");
+            const buttons = root.querySelectorAll(".interact-btn");
+            const generateBtns = root.querySelectorAll('[data-action="generate"]');
+            const stopBtns = root.querySelectorAll('[data-action="stop"]');
+
+            const state = {
+              left: { first: null, second: null },
+              right: { first: null, second: null },
+              both: { first: null, second: null }, // roll / pitch / yaw
+            };
+
+            video.playbackRate = 5;
+
+            buttons.forEach((btn) => {
+              btn.addEventListener("click", () => {
+                const arm = btn.dataset.arm;   // left / right / both
+                const slot = btn.dataset.slot; // first / second
+                const dir = btn.dataset.dir;   // f/r/u/b/d/r 或 roll/pitch/yaw
+
+                if (!arm || !slot) return;
+
+                buttons.forEach((b) => {
+                  if (b.dataset.arm === arm && b.dataset.slot === slot) {
+                    b.classList.remove("active");
+                  }
+                });
+                btn.classList.add("active");
+
+                if (state[arm]) {
+                  state[arm][slot] = dir;
+                }
+              });
+            });
+
+            function getFolderForArm(arm) {
+              const s = state[arm];
+              if (!s || !s.first || !s.second) return null;
+              return `${arm}_${s.first}_${s.second}`;
+            }
+
+            function getVideoSrcForArm(arm) {
+              const folder = getFolderForArm(arm);
+              if (!folder) return null;
+              return `${basePath}/${folder}/merged.mp4`;
+            }
+
+            function playVideo(src) {
+              if (video.src !== src) {
+                video.src = src;
+              }
+              cover.style.display = "none";
+              video.style.display = "block";
+              video.currentTime = 0;
+              video.play();
+            }
+
+            generateBtns.forEach((btn, index) => {
+              btn.addEventListener("click", () => {
+                const targetArm =
+                  btn.dataset.targetArm || (index === 0 ? "left" : "right");
+
+                const src = getVideoSrcForArm(targetArm);
+                if (!src) {
+                  alert(
+                    `Please choose both moves for the ${targetArm} ${
+                      targetArm === "both" ? "rotation" : "arm"
+                    } first.`
+                  );
+                  return;
+                }
+                playVideo(src);
+              });
+            });
+
+            stopBtns.forEach((btn) => {
+              btn.addEventListener("click", () => {
+                video.pause();
+                video.currentTime = 0;
+                video.style.display = "none";
+                cover.style.display = "";
+
+                buttons.forEach((b) => b.classList.remove("active"));
+
+                state.left.first = null;
+                state.left.second = null;
+                state.right.first = null;
+                state.right.second = null;
+                state.both.first = null;
+                state.both.second = null;
+              });
+            });
+          });
+        </script>
+
+        </div>
+</body>
+</html>

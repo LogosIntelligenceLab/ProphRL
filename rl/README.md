@@ -33,7 +33,7 @@ VLA policy -- action chunk --> Prophet world model -- future video --> VLM rewar
 Let `std` be the noise standard deviation of the flow schedule at outer decision step `s` and internal flow step `k`:
 
 $$
-\sigma_{s,k}^{2}=\operatorname{std}_{s,k}^{2},
+\sigma_{s,k}^{2}=\mathrm{std}_{s,k}^{2},
 \qquad
 \widetilde{w}_{s,k}=(\sigma_{s,k}^{2}+\varepsilon)^p.
 $$
@@ -41,14 +41,14 @@ $$
 FlowScale applies the **normalize-mix-clip** weighting from Eq. (22) of the paper:
 
 $$
-w_{s,k}=\operatorname{clip}\!\left(
+w_{s,k}=\mathrm{clip}\left(
 \alpha+(1-\alpha)
 \frac{\widetilde{w}_{s,k}}
 {\frac{1}{K}\sum_{j=1}^{K}\widetilde{w}_{s,j}},
 w_{\min},w_{\max}
 \right),
 \qquad
-w_{s,k}=\operatorname{stopgrad}(w_{s,k}).
+w_{s,k}=\mathrm{stopgrad}(w_{s,k}).
 $$
 
 The default configuration uses `p=0.5`, `alpha=0.3`, `w_min=0.3`, and `w_max=2.0`. With `p=0.5`, the unnormalized weight is approximately proportional to the noise standard deviation. Before clipping, normalization gives the weights a mean of 1 over the `K` flow steps, uniform mixing prevents excessive concentration, and clipping bounds the effective scale. The same environment-action advantage is broadcast to every flow step and multiplied by detached `w`:
@@ -71,13 +71,13 @@ At flow time `t`, the implementation selects `sigma = sigmas[K * (1 - t)]`. The 
 $$
 \gamma_{s,k}=0.7\sqrt{\frac{\sigma_{s,k}}{1-\sigma'_{s,k}}},
 \qquad
-\operatorname{std}_{s,k}=\max\!\left(\sqrt{|\Delta t|}\,\gamma_{s,k},10^{-6}\right).
+\mathrm{std}_{s,k}=\max\left(\sqrt{|\Delta t|}\cdot\gamma_{s,k},10^{-6}\right).
 $$
 
 For the first flow step, where `sigma=1`, the denominator uses `sigma_max=sigmas[1]` to avoid division by zero. Other steps use `sigma'=sigma`. This `std` is used both for sampling
 
 $$
-x_{k+1}=\mu_k+\operatorname{std}_{s,k}\epsilon,
+x_{k+1}=\mu_k+\mathrm{std}_{s,k}\epsilon,
 \qquad \epsilon\sim\mathcal{N}(0,I),
 $$
 
@@ -115,7 +115,7 @@ The `kl_fs` objective adds the log-probability KL against a frozen reference pol
 
 $$
 L=L_{\mathrm{FA\text{-}GRPO+FS}}+
-\beta\,\mathbb{E}_{M}\!\left[\log\pi_\theta(a\mid o)-\log\pi_{\mathrm{ref}}(a\mid o)\right].
+\beta\mathbb{E}_{M}\left[\log\pi_\theta(a\mid o)-\log\pi_{\mathrm{ref}}(a\mid o)\right].
 $$
 
 ## Repository Layout

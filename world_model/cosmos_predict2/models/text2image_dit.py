@@ -402,13 +402,31 @@ class Attention(nn.Module):
         """
         q, k, v = self.compute_qkv(x, context, rope_emb=rope_emb)
         if (k_mem is not None) and (v_mem is not None):
-            k_m = self.k_proj(k_mem)  # [B, Lm, H*Dh]
-            v_m = self.v_proj(v_mem)  # [B, Lm, H*Dh]
-            k_m = rearrange(k_m, "b s (h d) -> b s h d", h=self.n_heads, d=self.head_dim)
-            v_m = rearrange(v_m, "b s (h d) -> b s h d", h=self.n_heads, d=self.head_dim)
-            k_m = self.k_norm(k_m); v_m = self.v_norm(v_m)
-            k = torch.cat([k_m, k], dim=1)   # [B, Lm+S, H, Dh]
-            v = torch.cat([v_m, v], dim=1)
+            if k_mem.ndim == 3 and v_mem.ndim == 3:
+                k_m = self.k_proj(k_mem)
+                v_m = self.v_proj(v_mem)
+                k_m = rearrange(k_m, "b s (h d) -> b s h d", h=self.n_heads, d=self.head_dim)
+                v_m = rearrange(v_m, "b s (h d) -> b s h d", h=self.n_heads, d=self.head_dim)
+                k_m = self.k_norm(k_m)
+                v_m = self.v_norm(v_m)
+                k = torch.cat([k_m, k], dim=1)
+                v = torch.cat([v_m, v], dim=1)
+            elif k_mem.ndim == 4 and v_mem.ndim == 4:
+                n_views = k_mem.shape[1]
+                k_m = self.k_proj(k_mem)
+                v_m = self.v_proj(v_mem)
+                k_m = rearrange(k_m, "b v s (h d) -> b v s h d", h=self.n_heads, d=self.head_dim)
+                v_m = rearrange(v_m, "b v s (h d) -> b v s h d", h=self.n_heads, d=self.head_dim)
+                k_m = self.k_norm(k_m)
+                v_m = self.v_norm(v_m)
+                k = rearrange(k, "b (v s) h d -> b v s h d", v=n_views)
+                v = rearrange(v, "b (v s) h d -> b v s h d", v=n_views)
+                k = torch.cat([k_m, k], dim=2).flatten(1, 2)
+                v = torch.cat([v_m, v], dim=2).flatten(1, 2)
+            else:
+                raise ValueError(
+                    f"k_mem and v_mem must both be 3D or 4D, got {k_mem.shape} and {v_mem.shape}"
+                )
         return self.compute_attention(q, k, v, video_size=video_size)
 
     def set_context_parallel_group(

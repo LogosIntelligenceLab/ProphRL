@@ -1,0 +1,403 @@
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Take the red spoon and put it on the yellow cloth."], "init_state_path": ["images/0a/PutSpoonOnTableClothInScene_0a0bf6fa.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Pick up the spoon and place it on the blue cloth"], "init_state_path": ["images/0a/PutSpoonOnTableClothInScene_0a4736d4.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["pick the red spoon and put it on the blue cloth"], "init_state_path": ["images/0b/PutSpoonOnTableClothInScene_0b12e540.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["put the green spoon on top of the blue cloth"], "init_state_path": ["images/0c/PutSpoonOnTableClothInScene_0ce6ae4c.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Move the spoon to set partially on top of the cloth."], "init_state_path": ["images/10/PutSpoonOnTableClothInScene_10bb7660.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Pick up the blue spoon and place it on the green cloth"], "init_state_path": ["images/12/PutSpoonOnTableClothInScene_12e08692.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["put the spoon to the cloth"], "init_state_path": ["images/15/PutSpoonOnTableClothInScene_15565c76.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["place the blue spoon on top of the orange cloth"], "init_state_path": ["images/18/PutSpoonOnTableClothInScene_184587c2.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Place red spoon on the green cloth"], "init_state_path": ["images/18/PutSpoonOnTableClothInScene_1856ba4c.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Set the spoon onto the orange cloth."], "init_state_path": ["images/1a/PutSpoonOnTableClothInScene_1a703786.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Move the red spoon over the blue cloth."], "init_state_path": ["images/1f/PutSpoonOnTableClothInScene_1f64f344.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Move the spoon to top of the yellow cloth."], "init_state_path": ["images/24/PutSpoonOnTableClothInScene_2451f6fe.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Move the spoon above the cloth."], "init_state_path": ["images/25/PutSpoonOnTableClothInScene_2552371c.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["put blue spoon on the orange cloth"], "init_state_path": ["images/25/PutSpoonOnTableClothInScene_25dc236e.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Place the spoon on the cloth."], "init_state_path": ["images/27/PutSpoonOnTableClothInScene_27a0982e.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Place the red spoon on the cloth."], "init_state_path": ["images/27/PutSpoonOnTableClothInScene_27e28108.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Put the spoon on top of the blue cloth."], "init_state_path": ["images/28/PutSpoonOnTableClothInScene_286d5580.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["picked a blue spoon and placed it on top of an orange cloth"], "init_state_path": ["images/29/PutSpoonOnTableClothInScene_2947708a.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["put the blue spoon on the red cloth"], "init_state_path": ["images/2b/PutSpoonOnTableClothInScene_2b9a3cfa.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Put the spoon on top of the cloth"], "init_state_path": ["images/2c/PutSpoonOnTableClothInScene_2cb403be.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Pick up the blue spoon and place it on the green cloth"], "init_state_path": ["images/2d/PutSpoonOnTableClothInScene_2dfb5f74.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["moved the red spoon above the black cloth"], "init_state_path": ["images/30/PutSpoonOnTableClothInScene_30f0ade2.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["put the blue spoon on top of the green cloth."], "init_state_path": ["images/31/PutSpoonOnTableClothInScene_3103f37a.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Place the spoon on top of the blue cloth."], "init_state_path": ["images/32/PutSpoonOnTableClothInScene_32282ab4.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["put the blue spoon above the violet cloth"], "init_state_path": ["images/32/PutSpoonOnTableClothInScene_326a786a.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Place the spoon on the top of the blue cloth."], "init_state_path": ["images/32/PutSpoonOnTableClothInScene_32b9dd4c.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["take blue spoon and put it on top of the blue cloth"], "init_state_path": ["images/35/PutSpoonOnTableClothInScene_352532fc.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["put the blue spoon on the orange cloth"], "init_state_path": ["images/39/PutSpoonOnTableClothInScene_39ba766a.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["picked a red spoon and placed it on top of an orange cloth"], "init_state_path": ["images/3d/PutSpoonOnTableClothInScene_3d35373a.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["pick green spoon and drop it on the green cloth"], "init_state_path": ["images/3e/PutSpoonOnTableClothInScene_3e09d9fe.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Place the green spoon onto the blue piece of cloth."], "init_state_path": ["images/3e/PutSpoonOnTableClothInScene_3e26fcfa.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Put the blue spoon on the yellow cloth"], "init_state_path": ["images/3f/PutSpoonOnTableClothInScene_3f889f22.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["keep yellow spoon on the blue cloth"], "init_state_path": ["images/3f/PutSpoonOnTableClothInScene_3ff30d30.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Place the red spoon on the green cloth in the table."], "init_state_path": ["images/42/PutSpoonOnTableClothInScene_4238402e.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["move the blue spoon on top of the orange cloth"], "init_state_path": ["images/42/PutSpoonOnTableClothInScene_42ce3dae.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Place the spoon on the cloth."], "init_state_path": ["images/47/PutSpoonOnTableClothInScene_47c4c13e.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Put the spoon on the cloth."], "init_state_path": ["images/49/PutSpoonOnTableClothInScene_49636f04.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["place the blue spoon on the blue cloth"], "init_state_path": ["images/4b/PutSpoonOnTableClothInScene_4b537034.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Pick up the red spoon and place it on the purple cloth"], "init_state_path": ["images/4b/PutSpoonOnTableClothInScene_4b7a6cc0.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["put the blue spoon on the orange cloth"], "init_state_path": ["images/50/PutSpoonOnTableClothInScene_50b82038.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["pick the red spoon and put it on violate kitchen cloth"], "init_state_path": ["images/52/PutSpoonOnTableClothInScene_52f7eaf4.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["place green spoon on the yellow cloth"], "init_state_path": ["images/54/PutSpoonOnTableClothInScene_5423eeb4.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Place the blue spoon onto the green cloth."], "init_state_path": ["images/55/PutSpoonOnTableClothInScene_5550d252.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["keep blue spoon on the yellow cloth"], "init_state_path": ["images/56/PutSpoonOnTableClothInScene_56026418.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Put blue spoon on top of green cloth"], "init_state_path": ["images/59/PutSpoonOnTableClothInScene_593ff08c.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Put the blue spoon onto the yellow cloth"], "init_state_path": ["images/5a/PutSpoonOnTableClothInScene_5a3c28ca.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Place the spoon on the orange cloth."], "init_state_path": ["images/5c/PutSpoonOnTableClothInScene_5c780348.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Put the blue spoon on the orange cloth"], "init_state_path": ["images/5d/PutSpoonOnTableClothInScene_5d309a2a.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Put the spoon on the green cloth."], "init_state_path": ["images/5f/PutSpoonOnTableClothInScene_5f95021a.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["put the blue spoon on the top of the green cloth"], "init_state_path": ["images/63/PutSpoonOnTableClothInScene_63987964.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["put the spoon in the blue cloth"], "init_state_path": ["images/67/PutSpoonOnTableClothInScene_67277b02.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Place the spoon on the cloth."], "init_state_path": ["images/6e/PutSpoonOnTableClothInScene_6e0e7bd2.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Place the spoon above the blue cloth in the table."], "init_state_path": ["images/6e/PutSpoonOnTableClothInScene_6e147dd4.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Put the spoon on the green cloth."], "init_state_path": ["images/6e/PutSpoonOnTableClothInScene_6e475b78.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["put the red spoon on the purple cloth"], "init_state_path": ["images/78/PutSpoonOnTableClothInScene_78b9f3ea.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Pick up the blue spoon and placed it on blue cloth"], "init_state_path": ["images/79/PutSpoonOnTableClothInScene_79113042.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Place the blue spoon on the orange cloth."], "init_state_path": ["images/7b/PutSpoonOnTableClothInScene_7b48e85a.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["move the blue spoon on top of the orange cloth"], "init_state_path": ["images/7c/PutSpoonOnTableClothInScene_7c1fddc4.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Put the blue spoon on the orange cloth"], "init_state_path": ["images/7d/PutSpoonOnTableClothInScene_7d31da78.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Put the spoon on the cloth."], "init_state_path": ["images/7e/PutSpoonOnTableClothInScene_7eeeee3c.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["moved spoon on top of the cloth"], "init_state_path": ["images/80/PutSpoonOnTableClothInScene_809a781e.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["put the blue spoon on top of the orange cloth"], "init_state_path": ["images/82/PutSpoonOnTableClothInScene_820304f0.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["put spoon on top of the cloth"], "init_state_path": ["images/82/PutSpoonOnTableClothInScene_823980de.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Place blue spoon on the blue cloth"], "init_state_path": ["images/82/PutSpoonOnTableClothInScene_82466376.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Pick up the blue spoon and put it on above the green cloth"], "init_state_path": ["images/82/PutSpoonOnTableClothInScene_824c6ff0.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["put the ladle spoon on top of the yellow cloth"], "init_state_path": ["images/82/PutSpoonOnTableClothInScene_82602fea.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Place the spoon on the blue cloth."], "init_state_path": ["images/83/PutSpoonOnTableClothInScene_83925622.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Pick up the blue spoon and place it on the yellow cloth"], "init_state_path": ["images/86/PutSpoonOnTableClothInScene_8665043a.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["put the blue spoon on the cloth"], "init_state_path": ["images/88/PutSpoonOnTableClothInScene_8824431c.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["put red spoon on the green cloth"], "init_state_path": ["images/89/PutSpoonOnTableClothInScene_893613fc.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["take the yellow spoon and place it on top of the cloth"], "init_state_path": ["images/89/PutSpoonOnTableClothInScene_89da2456.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["pick red spoon and place it on the yellow cloth"], "init_state_path": ["images/89/PutSpoonOnTableClothInScene_89e993f0.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["put the blue and grey spoon on the yelllow cloth"], "init_state_path": ["images/8a/PutSpoonOnTableClothInScene_8a16bf92.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Place the red spoon on the green cloth."], "init_state_path": ["images/8a/PutSpoonOnTableClothInScene_8a88d2a8.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Put the red spoon on top of the blue cloth"], "init_state_path": ["images/96/PutSpoonOnTableClothInScene_964d2bd4.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["place blue spoon on the orange cloth"], "init_state_path": ["images/96/PutSpoonOnTableClothInScene_965c6cfc.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Put the spoon on the blue cloth"], "init_state_path": ["images/96/PutSpoonOnTableClothInScene_96710cde.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Put the spoon on the blue cloth"], "init_state_path": ["images/97/PutSpoonOnTableClothInScene_97289016.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Pick up the yellow spoon and move it onto the blue cloth."], "init_state_path": ["images/9d/PutSpoonOnTableClothInScene_9dfe9b56.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["move the spoon on top of the blue cloth"], "init_state_path": ["images/a0/PutSpoonOnTableClothInScene_a05de2e4.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Move blue spoon and place onto cloth"], "init_state_path": ["images/a2/PutSpoonOnTableClothInScene_a2223846.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Place the spoon on the orange cloth"], "init_state_path": ["images/a4/PutSpoonOnTableClothInScene_a41c4f10.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Place the spoon on top of the orange cloth."], "init_state_path": ["images/ad/PutSpoonOnTableClothInScene_adc958e6.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Move the spoon to be partially on top of the cloth."], "init_state_path": ["images/ae/PutSpoonOnTableClothInScene_aefd508c.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Place the spoon on top of the blue cloth"], "init_state_path": ["images/b1/PutSpoonOnTableClothInScene_b1ce3fe2.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["put the red spoon on the yellow cloth"], "init_state_path": ["images/b4/PutSpoonOnTableClothInScene_b470288c.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Pick up the spoon and place it on the blue cloth"], "init_state_path": ["images/b5/PutSpoonOnTableClothInScene_b59ba0b0.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Pick up the blue spoon and place it on the orange cloth"], "init_state_path": ["images/b6/PutSpoonOnTableClothInScene_b69b1630.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Pick up the blue spoon and place it on the blue cloth"], "init_state_path": ["images/b6/PutSpoonOnTableClothInScene_b6b39610.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Place the yellow spoon on the blue cloth."], "init_state_path": ["images/b6/PutSpoonOnTableClothInScene_b6d50d0e.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Put the blue spoon onto the yellow cloth"], "init_state_path": ["images/b8/PutSpoonOnTableClothInScene_b88d04d0.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["place the spoon on the cloth"], "init_state_path": ["images/bb/PutSpoonOnTableClothInScene_bba106a8.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Put red spoon on top of blue cloth"], "init_state_path": ["images/bb/PutSpoonOnTableClothInScene_bbce4e9c.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["put the spoon on the purple cloth"], "init_state_path": ["images/bc/PutSpoonOnTableClothInScene_bc21478c.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Put the blue spoon into the green cloth"], "init_state_path": ["images/be/PutSpoonOnTableClothInScene_be87cb7c.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Pick up the blue spoon and place it on the yellow cloth"], "init_state_path": ["images/bf/PutSpoonOnTableClothInScene_bffc0dc4.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Move the spoon with the robot and palce it on the blue cloth."], "init_state_path": ["images/c0/PutSpoonOnTableClothInScene_c00502e4.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["PLACE THE SPOON ON THE BLUE CLOTH"], "init_state_path": ["images/c1/PutSpoonOnTableClothInScene_c1a58c90.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["place green spoon on the yellow cloth"], "init_state_path": ["images/c3/PutSpoonOnTableClothInScene_c34b50ca.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["Place the spoon on the orange cloth."], "init_state_path": ["images/c3/PutSpoonOnTableClothInScene_c3ec0c0e.png"]}
+{"task_type": ["PutSpoonOnTableClothInScene"], "task_language": ["put the plastic spoon on the yellow cloth"], "init_state_path": ["images/ca/PutSpoonOnTableClothInScene_ca9fb294.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the yellow cube on top of the blue cube"], "init_state_path": ["images/09/StackGreenCubeOnYellowCubeBakedTexInScene_099bc920.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the cube on top of the green cube"], "init_state_path": ["images/0b/StackGreenCubeOnYellowCubeBakedTexInScene_0b025eb4.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the red cube on top of the 2 red cubes"], "init_state_path": ["images/0b/StackGreenCubeOnYellowCubeBakedTexInScene_0b1a7148.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the yellow block on top of the red cube"], "init_state_path": ["images/0c/StackGreenCubeOnYellowCubeBakedTexInScene_0c9e7c76.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["take the red cube and put it on top of the yellow cube"], "init_state_path": ["images/0d/StackGreenCubeOnYellowCubeBakedTexInScene_0d297f2e.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the yellow cube on top of green cube"], "init_state_path": ["images/0d/StackGreenCubeOnYellowCubeBakedTexInScene_0dc982da.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the red cube on top of white cube"], "init_state_path": ["images/0d/StackGreenCubeOnYellowCubeBakedTexInScene_0ddad17a.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the block on top of the yellow cube"], "init_state_path": ["images/0e/StackGreenCubeOnYellowCubeBakedTexInScene_0e3523aa.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the red cube on top of the blue block"], "init_state_path": ["images/0e/StackGreenCubeOnYellowCubeBakedTexInScene_0ebc7b98.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the blue block on top of the red block"], "init_state_path": ["images/0f/StackGreenCubeOnYellowCubeBakedTexInScene_0f5d0c34.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put yellow block on top of red block"], "init_state_path": ["images/0f/StackGreenCubeOnYellowCubeBakedTexInScene_0f663516.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["Put yellow cube on top of of blue cube"], "init_state_path": ["images/0f/StackGreenCubeOnYellowCubeBakedTexInScene_0ff1e0e8.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the red cube ontop of the white cube"], "init_state_path": ["images/10/StackGreenCubeOnYellowCubeBakedTexInScene_10c505f4.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the red block on the top of the blue block"], "init_state_path": ["images/11/StackGreenCubeOnYellowCubeBakedTexInScene_11607fde.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the yellow cube on top of the red block"], "init_state_path": ["images/12/StackGreenCubeOnYellowCubeBakedTexInScene_1299a8b2.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the yellow cube on top of the red cube"], "init_state_path": ["images/12/StackGreenCubeOnYellowCubeBakedTexInScene_12c01e20.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the yellow cube on top of the blue cube"], "init_state_path": ["images/14/StackGreenCubeOnYellowCubeBakedTexInScene_14169d08.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the yellow cube on top of the red cube"], "init_state_path": ["images/14/StackGreenCubeOnYellowCubeBakedTexInScene_14ffd414.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the brown roller on top the cube"], "init_state_path": ["images/16/StackGreenCubeOnYellowCubeBakedTexInScene_162c58ee.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the blue cube on top of  the green cube"], "init_state_path": ["images/17/StackGreenCubeOnYellowCubeBakedTexInScene_170e4dee.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["move the red cube on top of the wood cube"], "init_state_path": ["images/17/StackGreenCubeOnYellowCubeBakedTexInScene_17686202.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the green cube block on top of the blue cube"], "init_state_path": ["images/18/StackGreenCubeOnYellowCubeBakedTexInScene_18b70794.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the yellow block on top of the yellow cube"], "init_state_path": ["images/19/StackGreenCubeOnYellowCubeBakedTexInScene_19ce1078.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the yellow cube on top of the red cube"], "init_state_path": ["images/1c/StackGreenCubeOnYellowCubeBakedTexInScene_1cd0e282.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the green cube on top of yellow block"], "init_state_path": ["images/1f/StackGreenCubeOnYellowCubeBakedTexInScene_1f94cd26.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the red cube on top of the green cube"], "init_state_path": ["images/22/StackGreenCubeOnYellowCubeBakedTexInScene_22e178da.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the red cube on top of the blue cube"], "init_state_path": ["images/23/StackGreenCubeOnYellowCubeBakedTexInScene_2371dc18.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["Put the green block on top of the yellow block"], "init_state_path": ["images/23/StackGreenCubeOnYellowCubeBakedTexInScene_23f09bac.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["putting the yellow cube on top of green and red cube"], "init_state_path": ["images/24/StackGreenCubeOnYellowCubeBakedTexInScene_24417590.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the green block on top of the blue block"], "init_state_path": ["images/25/StackGreenCubeOnYellowCubeBakedTexInScene_254dfca6.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["Put the blue block on top of the red block"], "init_state_path": ["images/28/StackGreenCubeOnYellowCubeBakedTexInScene_2804a846.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the red cube on top of the block"], "init_state_path": ["images/28/StackGreenCubeOnYellowCubeBakedTexInScene_287633e4.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["move the blue cube on top of yellow cube"], "init_state_path": ["images/2a/StackGreenCubeOnYellowCubeBakedTexInScene_2aeb1ffe.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the green cube on top of the brown cube"], "init_state_path": ["images/2b/StackGreenCubeOnYellowCubeBakedTexInScene_2bace828.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["place the white block on top of the yellow block"], "init_state_path": ["images/2c/StackGreenCubeOnYellowCubeBakedTexInScene_2c1dbaf8.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the blue cube on top of the red cube"], "init_state_path": ["images/2d/StackGreenCubeOnYellowCubeBakedTexInScene_2df6e25a.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the yellow block on top of blue block"], "init_state_path": ["images/34/StackGreenCubeOnYellowCubeBakedTexInScene_347c1244.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["take red block and put top of red block"], "init_state_path": ["images/37/StackGreenCubeOnYellowCubeBakedTexInScene_37c8c744.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the thin block on top of the yellow block"], "init_state_path": ["images/37/StackGreenCubeOnYellowCubeBakedTexInScene_37ecabd2.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the green cube on top of the block"], "init_state_path": ["images/37/StackGreenCubeOnYellowCubeBakedTexInScene_37f2a8c0.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the red cube on top of the blue block"], "init_state_path": ["images/38/StackGreenCubeOnYellowCubeBakedTexInScene_3812201a.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the yellow cube on top of the yellow block"], "init_state_path": ["images/38/StackGreenCubeOnYellowCubeBakedTexInScene_38ab97c2.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the red block on top of the yellow block"], "init_state_path": ["images/39/StackGreenCubeOnYellowCubeBakedTexInScene_39ea1f6e.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["placed the green cube to the top of the yellow cube"], "init_state_path": ["images/3a/StackGreenCubeOnYellowCubeBakedTexInScene_3a3d27fe.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["take the red block to put it on top of the yellow cube"], "init_state_path": ["images/3e/StackGreenCubeOnYellowCubeBakedTexInScene_3e848a14.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the green cube on top of the red cube"], "init_state_path": ["images/3f/StackGreenCubeOnYellowCubeBakedTexInScene_3f15973e.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["Take the yellow cube and put it on top of the red cube"], "init_state_path": ["images/40/StackGreenCubeOnYellowCubeBakedTexInScene_40687c50.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put one yellow cube on top the yellow block"], "init_state_path": ["images/44/StackGreenCubeOnYellowCubeBakedTexInScene_44b1c654.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["Move the green cube on the top of yellow cube"], "init_state_path": ["images/45/StackGreenCubeOnYellowCubeBakedTexInScene_455da730.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the green cube block on top of the red cube"], "init_state_path": ["images/46/StackGreenCubeOnYellowCubeBakedTexInScene_46004576.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["take the red block and put on top of the yellow cube"], "init_state_path": ["images/46/StackGreenCubeOnYellowCubeBakedTexInScene_46238b3a.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["Move the brown block on top of the yellow cube"], "init_state_path": ["images/46/StackGreenCubeOnYellowCubeBakedTexInScene_466703b0.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the red cube on top of the yellow cube"], "init_state_path": ["images/47/StackGreenCubeOnYellowCubeBakedTexInScene_471b4e1a.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the white cube on top of the red cube"], "init_state_path": ["images/4c/StackGreenCubeOnYellowCubeBakedTexInScene_4c378b7a.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the yellow cube on the top of red cube"], "init_state_path": ["images/4c/StackGreenCubeOnYellowCubeBakedTexInScene_4c797238.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the blue block on top of the yellow block"], "init_state_path": ["images/4c/StackGreenCubeOnYellowCubeBakedTexInScene_4cac275a.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the yellow block on top of the blue block"], "init_state_path": ["images/4d/StackGreenCubeOnYellowCubeBakedTexInScene_4d078d5c.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the yellow cube on top of the blue cube"], "init_state_path": ["images/4d/StackGreenCubeOnYellowCubeBakedTexInScene_4dde2a92.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["place the red cube on top of the yellow block"], "init_state_path": ["images/50/StackGreenCubeOnYellowCubeBakedTexInScene_50835f4c.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["Put the green cube on top of the blue cube"], "init_state_path": ["images/50/StackGreenCubeOnYellowCubeBakedTexInScene_50b2f05e.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the yellow cube on top of green cube"], "init_state_path": ["images/51/StackGreenCubeOnYellowCubeBakedTexInScene_51d9c318.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the yellow block on top of the red block"], "init_state_path": ["images/52/StackGreenCubeOnYellowCubeBakedTexInScene_52ef86de.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the yellow block on top of the blue block"], "init_state_path": ["images/53/StackGreenCubeOnYellowCubeBakedTexInScene_5312ab46.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the blue block on top of the yellow cube"], "init_state_path": ["images/53/StackGreenCubeOnYellowCubeBakedTexInScene_5395cc7e.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the yellow cube on the red block"], "init_state_path": ["images/55/StackGreenCubeOnYellowCubeBakedTexInScene_5533f60a.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the red cube on top of the green cube"], "init_state_path": ["images/55/StackGreenCubeOnYellowCubeBakedTexInScene_559eedd4.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the blue block on top of the red cube"], "init_state_path": ["images/5a/StackGreenCubeOnYellowCubeBakedTexInScene_5aee4154.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["move the red cube to  the top of the white cube"], "init_state_path": ["images/5b/StackGreenCubeOnYellowCubeBakedTexInScene_5b5eb934.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the blue cube on top of the yellow cube"], "init_state_path": ["images/5c/StackGreenCubeOnYellowCubeBakedTexInScene_5cff00fa.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the green cube on top of the yellow cube"], "init_state_path": ["images/5d/StackGreenCubeOnYellowCubeBakedTexInScene_5d24856e.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the green cube on top of the blue block"], "init_state_path": ["images/5e/StackGreenCubeOnYellowCubeBakedTexInScene_5e34452a.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["place the blue cube on top of the green cube"], "init_state_path": ["images/5f/StackGreenCubeOnYellowCubeBakedTexInScene_5fee8a88.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the green block on top of the yellow block"], "init_state_path": ["images/60/StackGreenCubeOnYellowCubeBakedTexInScene_605bce04.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the red block on top of the blue block"], "init_state_path": ["images/61/StackGreenCubeOnYellowCubeBakedTexInScene_61211948.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the blue block on top of the yellow block"], "init_state_path": ["images/61/StackGreenCubeOnYellowCubeBakedTexInScene_614fea0c.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put he red cube on top of the green cube"], "init_state_path": ["images/62/StackGreenCubeOnYellowCubeBakedTexInScene_621e1a76.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the green block on top of the yellow block"], "init_state_path": ["images/64/StackGreenCubeOnYellowCubeBakedTexInScene_64e7fb6e.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the green cube on top of the yellow block"], "init_state_path": ["images/67/StackGreenCubeOnYellowCubeBakedTexInScene_672117bc.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the blue cube on top of the blue cube"], "init_state_path": ["images/6f/StackGreenCubeOnYellowCubeBakedTexInScene_6f6ca256.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the yellow block on top of the green block"], "init_state_path": ["images/72/StackGreenCubeOnYellowCubeBakedTexInScene_72b137e2.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the blue block on top of the green block"], "init_state_path": ["images/73/StackGreenCubeOnYellowCubeBakedTexInScene_73547902.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the green cube on top of the yellow cube."], "init_state_path": ["images/74/StackGreenCubeOnYellowCubeBakedTexInScene_7415ef42.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["move the red cube on top of the yellow cube"], "init_state_path": ["images/75/StackGreenCubeOnYellowCubeBakedTexInScene_75b973f0.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the blue cube on top of the red cube"], "init_state_path": ["images/83/StackGreenCubeOnYellowCubeBakedTexInScene_831f57b2.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the blue cube on top of the green cube"], "init_state_path": ["images/83/StackGreenCubeOnYellowCubeBakedTexInScene_83238eea.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the blue block on top of green block"], "init_state_path": ["images/84/StackGreenCubeOnYellowCubeBakedTexInScene_843e3bc2.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the blue cube on top of the green cube"], "init_state_path": ["images/85/StackGreenCubeOnYellowCubeBakedTexInScene_8500250c.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the green block on top of the yellow block"], "init_state_path": ["images/85/StackGreenCubeOnYellowCubeBakedTexInScene_85104946.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the blue block on the green cube"], "init_state_path": ["images/85/StackGreenCubeOnYellowCubeBakedTexInScene_854ebbb8.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["move the green cube to the top of the yellow cube"], "init_state_path": ["images/86/StackGreenCubeOnYellowCubeBakedTexInScene_86480a74.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["place the green cube on top of the yellow cube"], "init_state_path": ["images/87/StackGreenCubeOnYellowCubeBakedTexInScene_8723fa02.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the white block on  top of the green cube"], "init_state_path": ["images/87/StackGreenCubeOnYellowCubeBakedTexInScene_87a7a1c2.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the yellow block on top of the green cube"], "init_state_path": ["images/89/StackGreenCubeOnYellowCubeBakedTexInScene_8903a160.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the block on top of the green cube"], "init_state_path": ["images/89/StackGreenCubeOnYellowCubeBakedTexInScene_8956c8c2.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the blue block on the yellow block"], "init_state_path": ["images/8a/StackGreenCubeOnYellowCubeBakedTexInScene_8acc2ec2.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the blue cube on top of the red cube"], "init_state_path": ["images/8a/StackGreenCubeOnYellowCubeBakedTexInScene_8ae8f19c.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the green block on top of the yellow block"], "init_state_path": ["images/8c/StackGreenCubeOnYellowCubeBakedTexInScene_8cb85648.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the white block on top of the red cube"], "init_state_path": ["images/8d/StackGreenCubeOnYellowCubeBakedTexInScene_8d43ba6c.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["move the yellow block on to of the red block"], "init_state_path": ["images/8e/StackGreenCubeOnYellowCubeBakedTexInScene_8e05d412.png"]}
+{"task_type": ["StackGreenCubeOnYellowCubeBakedTexInScene"], "task_language": ["put the green cube on top of  blue block"], "init_state_path": ["images/8f/StackGreenCubeOnYellowCubeBakedTexInScene_8f1457f2.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/09/PutEggplantInBasketScene_09d7b3cc.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pot or pan"], "init_state_path": ["images/0a/PutEggplantInBasketScene_0a7ba72a.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pot or pan"], "init_state_path": ["images/0b/PutEggplantInBasketScene_0b0bd020.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant on plate"], "init_state_path": ["images/0c/PutEggplantInBasketScene_0ca3f7b4.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pan"], "init_state_path": ["images/0d/PutEggplantInBasketScene_0d1038fc.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pot or pan"], "init_state_path": ["images/0d/PutEggplantInBasketScene_0de3802c.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/0e/PutEggplantInBasketScene_0eb46f0c.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant on plate"], "init_state_path": ["images/0f/PutEggplantInBasketScene_0f12851a.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/0f/PutEggplantInBasketScene_0faf930a.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pot or pan"], "init_state_path": ["images/10/PutEggplantInBasketScene_10c9fb04.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/13/PutEggplantInBasketScene_1377c458.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/15/PutEggplantInBasketScene_15d86fb8.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant on plate"], "init_state_path": ["images/17/PutEggplantInBasketScene_1731e59c.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pot or pan"], "init_state_path": ["images/19/PutEggplantInBasketScene_19e30384.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pan"], "init_state_path": ["images/1a/PutEggplantInBasketScene_1a08ef7c.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pan"], "init_state_path": ["images/1b/PutEggplantInBasketScene_1b677820.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["move the eggplant on the silver bowl"], "init_state_path": ["images/1c/PutEggplantInBasketScene_1c0d8346.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pan"], "init_state_path": ["images/1c/PutEggplantInBasketScene_1cabc83a.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pan"], "init_state_path": ["images/1d/PutEggplantInBasketScene_1d88e77e.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant on plate"], "init_state_path": ["images/1e/PutEggplantInBasketScene_1e1fee94.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/1f/PutEggplantInBasketScene_1fabc1ac.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pan"], "init_state_path": ["images/20/PutEggplantInBasketScene_206a915e.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/20/PutEggplantInBasketScene_2074397a.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pan"], "init_state_path": ["images/21/PutEggplantInBasketScene_213f4df4.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pan"], "init_state_path": ["images/22/PutEggplantInBasketScene_223499a8.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant on plate"], "init_state_path": ["images/22/PutEggplantInBasketScene_22447b52.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/23/PutEggplantInBasketScene_23928bac.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant on plate"], "init_state_path": ["images/25/PutEggplantInBasketScene_25453666.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant on plate"], "init_state_path": ["images/26/PutEggplantInBasketScene_261ddd04.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pot or pan"], "init_state_path": ["images/27/PutEggplantInBasketScene_270182ac.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant on plate"], "init_state_path": ["images/27/PutEggplantInBasketScene_272a0416.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/27/PutEggplantInBasketScene_2748349a.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pan"], "init_state_path": ["images/29/PutEggplantInBasketScene_295658fc.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/29/PutEggplantInBasketScene_29bb5c20.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/2a/PutEggplantInBasketScene_2a47c994.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pot or pan"], "init_state_path": ["images/2a/PutEggplantInBasketScene_2a7ffd32.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/2e/PutEggplantInBasketScene_2efdfc4c.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/2f/PutEggplantInBasketScene_2f435788.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pan"], "init_state_path": ["images/30/PutEggplantInBasketScene_306f5fd0.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pan"], "init_state_path": ["images/30/PutEggplantInBasketScene_308cd4de.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/31/PutEggplantInBasketScene_31a11aec.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant on plate"], "init_state_path": ["images/32/PutEggplantInBasketScene_3282b2ae.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/32/PutEggplantInBasketScene_32d7147a.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pan"], "init_state_path": ["images/33/PutEggplantInBasketScene_3319b596.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/34/PutEggplantInBasketScene_345e65a0.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant on plate"], "init_state_path": ["images/34/PutEggplantInBasketScene_3489c240.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/34/PutEggplantInBasketScene_34953300.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pot or pan"], "init_state_path": ["images/34/PutEggplantInBasketScene_349fd670.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/34/PutEggplantInBasketScene_34b31046.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pan"], "init_state_path": ["images/35/PutEggplantInBasketScene_352b61c2.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pot or pan"], "init_state_path": ["images/36/PutEggplantInBasketScene_367ca4dc.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pan"], "init_state_path": ["images/37/PutEggplantInBasketScene_37af864e.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant on plate"], "init_state_path": ["images/37/PutEggplantInBasketScene_37db1c6e.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pan"], "init_state_path": ["images/37/PutEggplantInBasketScene_37feb05c.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant on towel"], "init_state_path": ["images/38/PutEggplantInBasketScene_3893d2fe.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pan"], "init_state_path": ["images/39/PutEggplantInBasketScene_397674f6.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant on plate"], "init_state_path": ["images/3a/PutEggplantInBasketScene_3a06065c.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/3a/PutEggplantInBasketScene_3a480200.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/3c/PutEggplantInBasketScene_3ccdad54.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pan"], "init_state_path": ["images/3d/PutEggplantInBasketScene_3d69ce6e.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pan"], "init_state_path": ["images/3e/PutEggplantInBasketScene_3e75cd62.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pot or pan"], "init_state_path": ["images/3f/PutEggplantInBasketScene_3f43a872.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/41/PutEggplantInBasketScene_41a22922.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/42/PutEggplantInBasketScene_4231c3c0.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/42/PutEggplantInBasketScene_42597384.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant on plate"], "init_state_path": ["images/43/PutEggplantInBasketScene_436bc2ae.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pot or pan"], "init_state_path": ["images/44/PutEggplantInBasketScene_4451b656.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant on plate"], "init_state_path": ["images/44/PutEggplantInBasketScene_44655ae4.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant on plate"], "init_state_path": ["images/44/PutEggplantInBasketScene_44ecc7ea.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/45/PutEggplantInBasketScene_4508c2ec.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pot or pan"], "init_state_path": ["images/45/PutEggplantInBasketScene_45c9deb4.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/47/PutEggplantInBasketScene_4794f580.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/47/PutEggplantInBasketScene_47aff8ee.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/48/PutEggplantInBasketScene_489ba280.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/48/PutEggplantInBasketScene_48d41a84.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pot or pan"], "init_state_path": ["images/48/PutEggplantInBasketScene_48e65f1e.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/49/PutEggplantInBasketScene_497bb00a.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant on plate"], "init_state_path": ["images/49/PutEggplantInBasketScene_49d15abe.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pan"], "init_state_path": ["images/49/PutEggplantInBasketScene_49feb3b0.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put the eggplant inside the silver pot"], "init_state_path": ["images/4a/PutEggplantInBasketScene_4a324d7e.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant on plate"], "init_state_path": ["images/4c/PutEggplantInBasketScene_4c4cdc32.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant on plate"], "init_state_path": ["images/4c/PutEggplantInBasketScene_4c9296fa.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/4f/PutEggplantInBasketScene_4fa116be.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pot or pan"], "init_state_path": ["images/4f/PutEggplantInBasketScene_4fd62020.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["Put the red eggplant on the blue cloth."], "init_state_path": ["images/50/PutEggplantInBasketScene_502c54c2.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant on plate"], "init_state_path": ["images/51/PutEggplantInBasketScene_5100c112.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant on plate"], "init_state_path": ["images/51/PutEggplantInBasketScene_5110695a.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/51/PutEggplantInBasketScene_513383d6.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pot or pan"], "init_state_path": ["images/51/PutEggplantInBasketScene_515838ac.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pan"], "init_state_path": ["images/51/PutEggplantInBasketScene_51e96d5e.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/53/PutEggplantInBasketScene_53a7ab4c.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/55/PutEggplantInBasketScene_557f5104.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/55/PutEggplantInBasketScene_55bfc414.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pan"], "init_state_path": ["images/56/PutEggplantInBasketScene_56385cee.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pot or pan"], "init_state_path": ["images/56/PutEggplantInBasketScene_56793458.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/57/PutEggplantInBasketScene_57e12a44.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pot or pan"], "init_state_path": ["images/58/PutEggplantInBasketScene_58f5e96a.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pot or pan"], "init_state_path": ["images/59/PutEggplantInBasketScene_59b00494.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant in pot or pan"], "init_state_path": ["images/59/PutEggplantInBasketScene_59bb7658.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant into pan"], "init_state_path": ["images/5b/PutEggplantInBasketScene_5b010d02.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put the eggplant inside the orange bowl"], "init_state_path": ["images/5b/PutEggplantInBasketScene_5b6821cc.png"]}
+{"task_type": ["PutEggplantInBasketScene"], "task_language": ["put eggplant on plate"], "init_state_path": ["images/5c/PutEggplantInBasketScene_5c6805ce.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/1f/PutCarrotOnPlateInScene_1f32ab8a.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/8c/PutCarrotOnPlateInScene_8c4009d4.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/45/PutCarrotOnPlateInScene_451555b4.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/70/PutCarrotOnPlateInScene_70ef72dc.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/2e/PutCarrotOnPlateInScene_2ee0ee5c.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/89/PutCarrotOnPlateInScene_89bb55ba.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/34/PutCarrotOnPlateInScene_34bef04e.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/58/PutCarrotOnPlateInScene_584c719e.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/30/PutCarrotOnPlateInScene_308cf034.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/2a/PutCarrotOnPlateInScene_2ab3eb22.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/30/PutCarrotOnPlateInScene_3060eade.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/73/PutCarrotOnPlateInScene_735a3dfe.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/9b/PutCarrotOnPlateInScene_9b2265fa.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/a2/PutCarrotOnPlateInScene_a2f14648.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/dd/PutCarrotOnPlateInScene_ddf04406.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/c7/PutCarrotOnPlateInScene_c7b21b88.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/6b/PutCarrotOnPlateInScene_6b4706ec.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/e4/PutCarrotOnPlateInScene_e4e9be68.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/4f/PutCarrotOnPlateInScene_4f19c950.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/45/PutCarrotOnPlateInScene_4551e600.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/3d/PutCarrotOnPlateInScene_3d91d632.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/48/PutCarrotOnPlateInScene_4808a2bc.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/30/PutCarrotOnPlateInScene_30c8d4dc.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/a1/PutCarrotOnPlateInScene_a172eb64.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/b7/PutCarrotOnPlateInScene_b749930c.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/e0/PutCarrotOnPlateInScene_e0ecc68e.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/51/PutCarrotOnPlateInScene_51ff8010.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/86/PutCarrotOnPlateInScene_86d5cb46.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/e2/PutCarrotOnPlateInScene_e28926fe.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/91/PutCarrotOnPlateInScene_91633490.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/d1/PutCarrotOnPlateInScene_d13dcf26.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/46/PutCarrotOnPlateInScene_4629a09a.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/36/PutCarrotOnPlateInScene_3695db3a.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/b8/PutCarrotOnPlateInScene_b8dae77a.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/b5/PutCarrotOnPlateInScene_b563961e.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/2d/PutCarrotOnPlateInScene_2db226a4.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/2b/PutCarrotOnPlateInScene_2bc1dd8a.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/a8/PutCarrotOnPlateInScene_a83c6600.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/e8/PutCarrotOnPlateInScene_e8ca17e4.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/7f/PutCarrotOnPlateInScene_7f5fac2e.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/62/PutCarrotOnPlateInScene_62035b8a.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/e2/PutCarrotOnPlateInScene_e282de52.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/1c/PutCarrotOnPlateInScene_1ce42a5c.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/c1/PutCarrotOnPlateInScene_c124bae6.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/a4/PutCarrotOnPlateInScene_a48c0920.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/d1/PutCarrotOnPlateInScene_d1391f8a.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/ad/PutCarrotOnPlateInScene_ad5bd8dc.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/cf/PutCarrotOnPlateInScene_cf0b0ebc.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/c7/PutCarrotOnPlateInScene_c7a3e464.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/d3/PutCarrotOnPlateInScene_d37c37be.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/ba/PutCarrotOnPlateInScene_bae39332.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/74/PutCarrotOnPlateInScene_7485ea5c.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/3e/PutCarrotOnPlateInScene_3e831812.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/93/PutCarrotOnPlateInScene_93b4d8ac.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/6a/PutCarrotOnPlateInScene_6ad8eeb4.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/bd/PutCarrotOnPlateInScene_bd603002.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/37/PutCarrotOnPlateInScene_375246ee.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/8b/PutCarrotOnPlateInScene_8b00197e.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/89/PutCarrotOnPlateInScene_89c4b90c.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/b3/PutCarrotOnPlateInScene_b3b2cb5a.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/b8/PutCarrotOnPlateInScene_b8e3d11e.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/5c/PutCarrotOnPlateInScene_5cc23aa6.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/9d/PutCarrotOnPlateInScene_9d6537ac.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/86/PutCarrotOnPlateInScene_86296eb4.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/49/PutCarrotOnPlateInScene_49ad2c1e.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/8b/PutCarrotOnPlateInScene_8bc8c072.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/45/PutCarrotOnPlateInScene_4592c5d0.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/be/PutCarrotOnPlateInScene_be7b62ea.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/1a/PutCarrotOnPlateInScene_1ab8afb4.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/d2/PutCarrotOnPlateInScene_d21b07d8.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/79/PutCarrotOnPlateInScene_79bf33a2.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/d4/PutCarrotOnPlateInScene_d408d714.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/7d/PutCarrotOnPlateInScene_7d60ef64.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/43/PutCarrotOnPlateInScene_43c4d18a.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/75/PutCarrotOnPlateInScene_75a10b38.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/8d/PutCarrotOnPlateInScene_8d0fa0a4.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/c2/PutCarrotOnPlateInScene_c2076198.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/56/PutCarrotOnPlateInScene_567d811e.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/27/PutCarrotOnPlateInScene_2785c9f2.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/26/PutCarrotOnPlateInScene_268e399e.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/ad/PutCarrotOnPlateInScene_adea3406.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/7c/PutCarrotOnPlateInScene_7c63eae4.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/25/PutCarrotOnPlateInScene_25043b0a.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/1f/PutCarrotOnPlateInScene_1fa9f94c.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/20/PutCarrotOnPlateInScene_208c61ce.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/72/PutCarrotOnPlateInScene_7265b3b0.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/82/PutCarrotOnPlateInScene_82f78050.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/54/PutCarrotOnPlateInScene_54f88e42.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/21/PutCarrotOnPlateInScene_2156935e.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/cf/PutCarrotOnPlateInScene_cf32711e.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/c2/PutCarrotOnPlateInScene_c2bbe7b2.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/1b/PutCarrotOnPlateInScene_1b70e4c6.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/4e/PutCarrotOnPlateInScene_4e2391ac.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/94/PutCarrotOnPlateInScene_94cac49a.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/8b/PutCarrotOnPlateInScene_8bfabeec.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/55/PutCarrotOnPlateInScene_558f8dc4.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/25/PutCarrotOnPlateInScene_25f3ce90.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/a0/PutCarrotOnPlateInScene_a0e9b894.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/93/PutCarrotOnPlateInScene_93ffba2a.png"]}
+{"task_type": ["PutCarrotOnPlateInScene"], "task_language": ["put carrot on plate"], "init_state_path": ["images/22/PutCarrotOnPlateInScene_2290f804.png"]}

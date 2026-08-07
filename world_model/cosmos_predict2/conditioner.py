@@ -1032,3 +1032,34 @@ class MultiViewConditioner(GeneralConditioner):
     def forward(self, batch: dict, override_dropout_rate: dict[str, float] | None = None) -> MultiViewCondition:
         output = super()._forward(batch, override_dropout_rate)
         return MultiViewCondition(**output)
+
+
+@dataclass(frozen=True)
+class ActionBlackHistoryStateMultiviewCondition(MultiViewCondition):
+    """Bridge world-model condition with action and optional history state."""
+
+    action: torch.Tensor | None = None
+    blacks: torch.Tensor | None = None
+    history: torch.Tensor | None = None
+    state: torch.Tensor | None = None
+
+
+class ActionBlackHistoryStateMultiviewConditioner(GeneralConditioner):
+    """Build the action-conditioned multi-view input used by the Bridge checkpoint."""
+
+    def forward(
+        self,
+        batch: dict,
+        override_dropout_rate: dict[str, float] | None = None,
+    ) -> ActionBlackHistoryStateMultiviewCondition:
+        output = super()._forward(batch, override_dropout_rate)
+        if "action" not in batch:
+            raise KeyError("ActionBlackHistoryStateMultiviewConditioner requires 'action' in batch")
+
+        output.update(
+            action=batch["action"],
+            blacks=batch.get("blacks"),
+            history=batch.get("history"),
+            state=batch.get("state"),
+        )
+        return ActionBlackHistoryStateMultiviewCondition(**output)

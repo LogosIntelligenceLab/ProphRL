@@ -6,7 +6,7 @@ ProphRL is an online reinforcement learning framework for vision-language-action
 
 This directory contains the reinforcement learning component of ProphRL, including the Pi05, VLA-Adapter, and OpenVLA-OFT-Flow policy backends, the Cosmos/Prophet rollout interface, VLM reward evaluation, FSDP training, and checkpoint merging. Prophet pretraining, fine-tuning, and standalone inference code live in the sibling [`../world_model`](../world_model/) directory. By default, training loads its source through `VAE_FOLDER=../world_model` and its DiT checkpoint through `WORLD_MODEL_PATH=../world_model/checkpoints/prophet/prophet-bridge.pt`.
 
-See the paper [Reinforcing Action Policies by Prophesying](https://arxiv.org/abs/2511.20633) and the [Logos Robotics Group / ProphRL project page](https://LogosRoboticsGroup.github.io/ProphRL).
+See the paper [Reinforcing Action Policies by Prophesying](https://arxiv.org/abs/2511.20633) and the [Logos Robotics Group / ProphRL project page](https://logosintelligencelab.github.io/ProphRL).
 
 Unless noted otherwise, run all commands below from the repository's `rl/` directory. This document uses `PROPHRL_ROOT` for the repository root and `RL_ROOT` and `WORLD_MODEL_ROOT` for the two component directories.
 

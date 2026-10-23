@@ -113,9 +113,9 @@ cu126 = [
 ]
 
 [project.urls]
-homepage = "https://LogosRoboticsGroup.github.io/ProphRL/"
-issues = "https://github.com/LogosRoboticsGroup/ProphRL/issues"
-repository = "https://github.com/LogosRoboticsGroup/ProphRL"
+homepage = "https://logosintelligencelab.github.io/ProphRL/"
+issues = "https://github.com/LogosIntelligenceLab/ProphRL/issues"
+repository = "https://github.com/LogosIntelligenceLab/ProphRL"
 
 [project.scripts]
 prophet-checkpoint = "prophet.checkpoints:main"

@@ -2,7 +2,7 @@
 
 # Reinforcing Action Policies by *Prophesying*
 
-[Paper](https://arxiv.org/abs/2511.20633) · [Project Page](https://LogosRoboticsGroup.github.io/ProphRL/) · [World Models](https://huggingface.co/Fleurrr/Prophet-World-Model) · [Pi05 Policy](https://huggingface.co/Fleurrr/OpenPI05-Bridge-RL) · [RL Data](https://huggingface.co/datasets/Fleurrr/Bridge-RL-Data)
+[Paper](https://arxiv.org/abs/2511.20633) · [Project Page](https://logosintelligencelab.github.io/ProphRL/) · [World Models](https://huggingface.co/Fleurrr/Prophet-World-Model) · [Pi05 Policy](https://huggingface.co/Fleurrr/OpenPI05-Bridge-RL) · [RL Data](https://huggingface.co/datasets/Fleurrr/Bridge-RL-Data)
 
 Jiahui Zhang<sup>1,3,*</sup>, Ze Huang<sup>1,3,*</sup>, Chun Gu<sup>1,2,3</sup>, Zipei Ma<sup>1,2</sup>, [Li Zhang](https://lzrobots.github.io/)<sup>1,2,3</sup>
 

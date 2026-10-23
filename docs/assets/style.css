@@ -2454,8 +2454,7 @@ html {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(120deg, rgba(245, 111, 183, 0.78), rgba(90, 133, 255, 0.9)),
-    url("assets/hero/prophrl-hero.jpg") center center / cover no-repeat;
+    linear-gradient(120deg, rgba(245, 111, 183, 0.78), rgba(90, 133, 255, 0.9));
   filter: brightness(0.9);
   z-index: -1;
 }
